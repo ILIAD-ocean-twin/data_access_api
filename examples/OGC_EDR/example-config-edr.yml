@@ -1,0 +1,213 @@
+# =================================================================
+#
+# Authors: Tom Kralidis <tomkralidis@gmail.com>
+#
+# Copyright (c) 2020 Tom Kralidis
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use,
+# copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#
+# =================================================================
+
+server:
+    bind:
+        host: 0.0.0.0
+        port: 5003
+    url: http://localhost:5003
+    mimetype: application/json; charset=UTF-8
+    encoding: utf-8
+    gzip: false
+    languages:
+        # First language is the default language
+        - en-US
+        - fr-CA
+    # cors: true
+    pretty_print: true
+    limit: 10
+    # templates:
+      # path: /path/to/Jinja2/templates
+      # static: /path/to/static/folder # css/js/img
+    map:
+        url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+#    manager:
+#        name: TinyDB
+#        connection: /tmp/pygeoapi-process-manager.db
+#        output_dir: /tmp/
+    # ogc_schemas_location: /opt/schemas.opengis.net
+    
+logging:
+    level: ERROR
+    #logfile: /tmp/pygeoapi.log
+
+metadata:
+    identification:
+        title:
+            en: pygeoapi default instance
+            fr: instance par défaut de pygeoapi
+        description:
+            en: pygeoapi provides an API to geospatial data
+            fr: pygeoapi fournit une API aux données géospatiales
+        keywords:
+            en:
+                - geospatial
+                - data
+                - api
+            fr:
+                - géospatiale
+                - données
+                - api
+        keywords_type: theme
+        terms_of_service: https://creativecommons.org/licenses/by/4.0/
+        url: https://example.org
+    license:
+        name: CC-BY 4.0 license
+        url: https://creativecommons.org/licenses/by/4.0/
+    provider:
+        name: Organization Name
+        url: https://pygeoapi.io
+    contact:
+        name: Lastname, Firstname
+        position: Position Title
+        address: Mailing Address
+        city: City
+        stateorprovince: Administrative Area
+        postalcode: Zip or Postal Code
+        country: Country
+        phone: +xx-xxx-xxx-xxxx
+        fax: +xx-xxx-xxx-xxxx
+        email: you@example.org
+        url: Contact URL
+        hours: Mo-Fr 08:00-17:00
+        instructions: During hours of service. Off on weekends.
+        role: pointOfContact
+
+resources:
+    csv-edr:
+        type: collection
+        title: WCS wrapper exposing EDR
+        description: example OGC WCS wrapper tested for ERDDAP NOAA server
+        keywords:
+            - edr
+            - wcs
+            - earthwatch
+            - coverage
+        extents:
+            spatial:
+                bbox: [-180,-90,180,90]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/csv-edr
+              title: base url
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: "http://localhost:5003/collections/sst-edr/cube?bbox=-51,%20-1,%20-49,%201&datetime=2022-04-01T00:00:00Z&select_properties=JPL-L4_GHRSST-SSTfnd-MUR-GLOB-v02.0-fv04.2"
+              title: example html query by 2D bbox coordinates
+        providers:
+            - type: edr
+              name: wcs-edr
+              base_url: http://coastwatch.pfeg.noaa.gov/erddap
+              data: tests/data/coads_sst.nc
+              format:
+                name: netcdf
+                mimetype: application/x-netcdf
+    sst-edr:
+        type: collection
+        title: SST on OGC EDR API
+        description: SST example netCDF data via EDR API
+        keywords:
+            - edr
+            - global
+        extents:
+            spatial:
+                bbox: [-180,-90,180,90]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/sst-edr
+              title: base url
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/collections/sst-edr/cube?bbox=-51,%20-1,%20-49,%201&datetime=2000-01-16&select_properties=SST
+              title: example html query by 2D bbox coordinates
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/collections/sst-edr/position?coords=POINT(111%2045)&f=json
+              title: example json query by position WKT Point coordinates
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/collections/sst-edr/cube?bbox=-51,%20-1,%20-49,%201&datetime=2000-01-16&f=json&select_properties=SST
+              title: example json query SST layer by 2D bbox and date
+            - type: app/netCDF
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/collections/sst-edr/cube?bbox=-51,%20-1,%20-49,%201&datetime=2000-01-16&f=netcdf
+              title: example netCDF query all layers by 2D bbox and date
+        providers:
+            - type: edr
+              name: xarray-edr
+              data: tests/data/coads_sst.nc
+             # optionally specify x/y/time fields, else provider will attempt
+             # to derive automagically
+              x_field: COADSX
+              y_field: COADSY
+              time_field: TIME
+              time_api_label: t
+              format:
+                name: netcdf
+                mimetype: application/x-netcdf
+    analysed-sst-edr:
+        type: collection
+        title: SST analysed on OGC EDR API
+        description: SST analysed data Zarr data example via EDR API
+        keywords:
+            - edr
+            - global
+        extents:
+            spatial:
+                bbox: [-180,-90,180,90]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5003/edr-test
+              title: base url
+        providers:
+           - type: edr
+             name: xarray-edr
+             data: tests/data/analysed_sst.zarr
+             time_field: time
+             #x_field: lat
+             #y_field: lon
+             #time_api_label: t
+             format:
+               name: zarr
+               mimetype: application/zip
