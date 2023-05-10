@@ -1,0 +1,79 @@
+# JSON-LD semantic uplift definition for edr_coverage.json
+
+transform:
+  # Move ranges inside parameters (map by key)
+  - '.ranges as $ranges | .parameters |= with_entries(.value += {"range": $ranges[.key]}) | del(.ranges)'
+
+types:
+  '$.domain.axes.x': axis:X
+  '$.domain.axes.y': axis:Y
+  '$.domain.axes.z': axis:Z
+  '$.domain.axes.t': axis:T
+  $.parameters.*.unit: om2:Unit
+  $.parameters.*.observedProperty: sosa:ObservableProperty
+
+context:
+  $:
+    rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    rdfs: http://www.w3.org/2000/01/rdf-schema#
+    iliad-props: http://example.com/iliad-data-access/meta-model/properties/
+    iliad-types: http://example.com/iliad-data-access/meta-model/classes/
+    iliad-data-types: http://example.com/iliad-data-access/meta-model/data-types/
+    axis: http://example.com/iliad-data-access/meta-model/classes/axis/
+    sosa: http://www.w3.org/ns/sosa/
+    om2: http://www.ontology-of-units-of-measure.org/resource/om-2/
+    dct: http://purl.org/dc/terms/
+    type:
+      '@id': 'rdf:type'
+      '@type': '@id'
+      '@context':
+        '@base': http://example.com/iliad-data-access/meta-model/classes/
+    domain: iliad-props:domain
+    axes:
+      '@id': iliad-props:hasAxis
+      '@container': '@index'
+      '@context':
+        '@vocab': http://example.com/iliad-data-access/meta-model/properties/
+        values:
+          '@id': 'iliad-props:axis-values'
+          '@container': '@list'
+    referencing:
+      '@id': iliad-props:referencing
+      '@context':
+        coordinates:
+          '@id': iliad-props:coords
+          '@container': '@list'
+        system: iliad-props:crs
+        '@base': http://example.com/iliad-data-access/meta-model/classes/
+        type: '@type'
+        id: '@id'
+    parameters:
+      '@id': iliad-props:hasParameter
+      '@container': '@index'
+      '@context':
+        '@base': http://example.com/iliad-data-access/meta-model/classes/
+        description: rdfs:label
+        unit: om2:hasUnit
+        symbol: om2:symbol
+        observedProperty:
+          '@id': sosa:observedProperty
+          '@context':
+            id: dct:identifier
+            label:
+              '@id': rdfs:label
+              '@container': '@language'
+        range:
+          '@id': iliad-props:range
+          '@context':
+            type: '@type'
+            dataType: iliad-props:datatype
+            axisNames:
+              '@id': iliad-props:axisNames
+              '@container': '@list'
+            shape:
+              '@id': iliad-props:shape
+              '@container': '@list'
+            values:
+              '@id': iliad-props:range-values
+              '@container': '@list'
+

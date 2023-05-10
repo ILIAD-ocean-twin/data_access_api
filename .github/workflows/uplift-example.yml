@@ -1,0 +1,35 @@
+name: Uplift edr_coverage.json
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'examples/*.json'
+      - 'examples/*.yaml'
+      - 'examples/*.yml'
+
+jobs:
+  uplift:
+    name: Semantic uplift
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ogc-na
+      - name: Uplift files
+        run: |
+          python -m ogc.na.ingest_json --batch --skip-on-missing-context \
+            --json-ld --ttl examples/*.json
+      - name: Add and commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Semantic uplift"
+          default_author: github_actions
