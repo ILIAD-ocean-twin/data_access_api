@@ -1,754 +1,328 @@
-[
-  {
-    "http://example.com/iliad-data-access/meta-model/properties/domain": [
-      {
-        "http://example.com/iliad-data-access/meta-model/properties/hasAxis": [
-          {
-            "@type": [
-              "http://example.com/iliad-data-access/meta-model/classes/axis/T"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/axis-values": [
-              {
-                "@list": [
-                  {
-                    "@value": "2000-01-16T06:00:00.000000000"
-                  },
-                  {
-                    "@value": "2000-02-15T16:29:05.999999999"
-                  },
-                  {
-                    "@value": "2000-03-17T02:58:12.000000000"
-                  },
-                  {
-                    "@value": "2000-04-16T13:27:18.000000000"
-                  },
-                  {
-                    "@value": "2000-05-16T23:56:24.000000000"
-                  },
-                  {
-                    "@value": "2000-06-16T10:25:30.000000000"
-                  },
-                  {
-                    "@value": "2000-07-16T20:54:36.000000000"
-                  },
-                  {
-                    "@value": "2000-08-16T07:23:42.000000000"
-                  },
-                  {
-                    "@value": "2000-09-15T17:52:48.000000000"
-                  },
-                  {
-                    "@value": "2000-10-16T04:21:54.000000000"
-                  },
-                  {
-                    "@value": "2000-11-15T14:51:00.000000000"
-                  },
-                  {
-                    "@value": "2000-12-16T01:20:05.999999996"
-                  }
-                ]
-              }
-            ],
-            "@index": "t"
-          },
-          {
-            "@type": [
-              "http://example.com/iliad-data-access/meta-model/classes/axis/X"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/num": [
-              {
-                "@value": 1
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/start": [
-              {
-                "@value": 111
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/stop": [
-              {
-                "@value": 111
-              }
-            ],
-            "@index": "x"
-          },
-          {
-            "@type": [
-              "http://example.com/iliad-data-access/meta-model/classes/axis/Y"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/num": [
-              {
-                "@value": 1
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/start": [
-              {
-                "@value": 45
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/stop": [
-              {
-                "@value": 45
-              }
-            ],
-            "@index": "y"
-          }
+{
+  "type": "Coverage",
+  "domain": {
+    "type": "Domain",
+    "domainType": "Grid",
+    "axes": {
+      "x": {
+        "start": 111,
+        "stop": 111,
+        "num": 1,
+        "@type": [
+          "axis:X"
+        ]
+      },
+      "y": {
+        "start": 45,
+        "stop": 45,
+        "num": 1,
+        "@type": [
+          "axis:Y"
+        ]
+      },
+      "t": {
+        "values": [
+          "2000-01-16T06:00:00.000000000",
+          "2000-02-15T16:29:05.999999999",
+          "2000-03-17T02:58:12.000000000",
+          "2000-04-16T13:27:18.000000000",
+          "2000-05-16T23:56:24.000000000",
+          "2000-06-16T10:25:30.000000000",
+          "2000-07-16T20:54:36.000000000",
+          "2000-08-16T07:23:42.000000000",
+          "2000-09-15T17:52:48.000000000",
+          "2000-10-16T04:21:54.000000000",
+          "2000-11-15T14:51:00.000000000",
+          "2000-12-16T01:20:05.999999996"
         ],
-        "http://example.com/iliad-data-access/meta-model/properties/referencing": [
-          {
-            "http://example.com/iliad-data-access/meta-model/properties/coords": [
-              {
-                "@list": [
-                  {
-                    "@value": "x"
-                  },
-                  {
-                    "@value": "y"
-                  }
-                ]
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/crs": [
-              {
-                "@id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84",
-                "@type": [
-                  "GeographicCRS"
-                ]
-              }
-            ]
-          }
-        ],
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
-          {
-            "@id": "Domain"
-          }
+        "@type": [
+          "axis:T"
         ]
       }
-    ],
-    "http://example.com/iliad-data-access/meta-model/properties/hasParameter": [
+    },
+    "referencing": [
       {
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "AIR TEMPERATURE"
-          }
+        "coordinates": [
+          "x",
+          "y"
         ],
-        "http://www.w3.org/ns/sosa/observedProperty": [
-          {
-            "@type": [
-              "http://www.w3.org/ns/sosa/ObservableProperty"
-            ],
-            "http://purl.org/dc/terms/identifier": [
-              {
-                "@value": "AIRT"
-              }
-            ],
-            "http://www.w3.org/2000/01/rdf-schema#label": [
-              {
-                "@value": "AIR TEMPERATURE",
-                "@language": "en"
-              }
-            ]
-          }
-        ],
-        "http://example.com/iliad-data-access/meta-model/properties/range": [
-          {
-            "http://example.com/iliad-data-access/meta-model/properties/axisNames": [
-              {
-                "@list": [
-                  {
-                    "@value": "y"
-                  },
-                  {
-                    "@value": "x"
-                  },
-                  {
-                    "@value": "t"
-                  }
-                ]
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/datatype": [
-              {
-                "@value": "float64"
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/shape": [
-              {
-                "@list": [
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 12
-                  }
-                ]
-              }
-            ],
-            "@type": [
-              "NdArray"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/range-values": [
-              {
-                "@list": [
-                  {
-                    "@value": 1.8304544687271118
-                  },
-                  {
-                    "@value": 1.2897988557815552
-                  },
-                  {
-                    "@value": 1.9540908336639404
-                  },
-                  {
-                    "@value": 3.101818084716797
-                  },
-                  {
-                    "@value": 5.2284088134765625
-                  },
-                  {
-                    "@value": 8.596136093139648
-                  },
-                  {
-                    "@value": 13.002045631408691
-                  },
-                  {
-                    "@value": 15.681363105773926
-                  },
-                  {
-                    "@value": 13.668863296508789
-                  },
-                  {
-                    "@value": 10.355681419372559
-                  },
-                  {
-                    "@value": 7.054090976715088
-                  },
-                  {
-                    "@value": 3.8068182468414307
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
-          {
-            "@id": "Parameter"
-          }
-        ],
-        "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
-          {
-            "@type": [
-              "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"
-            ],
-            "http://www.ontology-of-units-of-measure.org/resource/om-2/symbol": [
-              {
-                "@value": "DEG C"
-              }
-            ]
-          }
-        ],
-        "@index": "AIRT"
+        "system": {
+          "type": "GeographicCRS",
+          "id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+        }
+      }
+    ]
+  },
+  "parameters": {
+    "SST": {
+      "type": "Parameter",
+      "description": "SEA SURFACE TEMPERATURE",
+      "unit": {
+        "symbol": "Deg C",
+        "@type": [
+          "om2:Unit"
+        ]
       },
-      {
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "SEA SURFACE TEMPERATURE"
-          }
-        ],
-        "http://www.w3.org/ns/sosa/observedProperty": [
-          {
-            "@type": [
-              "http://www.w3.org/ns/sosa/ObservableProperty"
-            ],
-            "http://purl.org/dc/terms/identifier": [
-              {
-                "@value": "SST"
-              }
-            ],
-            "http://www.w3.org/2000/01/rdf-schema#label": [
-              {
-                "@value": "SEA SURFACE TEMPERATURE",
-                "@language": "en"
-              }
-            ]
-          }
-        ],
-        "http://example.com/iliad-data-access/meta-model/properties/range": [
-          {
-            "http://example.com/iliad-data-access/meta-model/properties/axisNames": [
-              {
-                "@list": [
-                  {
-                    "@value": "y"
-                  },
-                  {
-                    "@value": "x"
-                  },
-                  {
-                    "@value": "t"
-                  }
-                ]
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/datatype": [
-              {
-                "@value": "float64"
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/shape": [
-              {
-                "@list": [
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 12
-                  }
-                ]
-              }
-            ],
-            "@type": [
-              "NdArray"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/range-values": [
-              {
-                "@list": [
-                  {
-                    "@value": 2.687727212905884
-                  },
-                  {
-                    "@value": 2.0693161487579346
-                  },
-                  {
-                    "@value": 1.957727313041687
-                  },
-                  {
-                    "@value": 1.9590908288955688
-                  },
-                  {
-                    "@value": 3.5272727012634277
-                  },
-                  {
-                    "@value": 6.695227146148682
-                  },
-                  {
-                    "@value": 11.244772911071777
-                  },
-                  {
-                    "@value": 14.773863792419434
-                  },
-                  {
-                    "@value": 13.294090270996094
-                  },
-                  {
-                    "@value": 10.350000381469727
-                  },
-                  {
-                    "@value": 7.209318161010742
-                  },
-                  {
-                    "@value": 4.231818199157715
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
-          {
-            "@id": "Parameter"
-          }
-        ],
-        "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
-          {
-            "@type": [
-              "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"
-            ],
-            "http://www.ontology-of-units-of-measure.org/resource/om-2/symbol": [
-              {
-                "@value": "Deg C"
-              }
-            ]
-          }
-        ],
-        "@index": "SST"
+      "observedProperty": {
+        "id": "SST",
+        "label": {
+          "en": "SEA SURFACE TEMPERATURE"
+        },
+        "@type": [
+          "sosa:ObservableProperty"
+        ]
       },
-      {
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "ZONAL WIND"
-          }
+      "range": {
+        "type": "NdArray",
+        "dataType": "float64",
+        "axisNames": [
+          "y",
+          "x",
+          "t"
         ],
-        "http://www.w3.org/ns/sosa/observedProperty": [
-          {
-            "@type": [
-              "http://www.w3.org/ns/sosa/ObservableProperty"
-            ],
-            "http://purl.org/dc/terms/identifier": [
-              {
-                "@value": "UWND"
-              }
-            ],
-            "http://www.w3.org/2000/01/rdf-schema#label": [
-              {
-                "@value": "ZONAL WIND",
-                "@language": "en"
-              }
-            ]
-          }
+        "shape": [
+          1,
+          1,
+          12
         ],
-        "http://example.com/iliad-data-access/meta-model/properties/range": [
-          {
-            "http://example.com/iliad-data-access/meta-model/properties/axisNames": [
-              {
-                "@list": [
-                  {
-                    "@value": "y"
-                  },
-                  {
-                    "@value": "x"
-                  },
-                  {
-                    "@value": "t"
-                  }
-                ]
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/datatype": [
-              {
-                "@value": "float64"
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/shape": [
-              {
-                "@list": [
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 12
-                  }
-                ]
-              }
-            ],
-            "@type": [
-              "NdArray"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/range-values": [
-              {
-                "@list": [
-                  {
-                    "@value": 4.3645453453063965
-                  },
-                  {
-                    "@value": 3.7200241088867188
-                  },
-                  {
-                    "@value": 3.0877273082733154
-                  },
-                  {
-                    "@value": 1.702727198600769
-                  },
-                  {
-                    "@value": 1.7129545211791992
-                  },
-                  {
-                    "@value": 2.0529544353485107
-                  },
-                  {
-                    "@value": 1.9027272462844849
-                  },
-                  {
-                    "@value": 1.9197726249694824
-                  },
-                  {
-                    "@value": 2.1536362171173096
-                  },
-                  {
-                    "@value": 2.652045488357544
-                  },
-                  {
-                    "@value": 2.5688636302948
-                  },
-                  {
-                    "@value": 4.094090938568115
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
-          {
-            "@id": "Parameter"
-          }
-        ],
-        "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
-          {
-            "@type": [
-              "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"
-            ],
-            "http://www.ontology-of-units-of-measure.org/resource/om-2/symbol": [
-              {
-                "@value": "M/S"
-              }
-            ]
-          }
-        ],
-        "@index": "UWND"
+        "values": [
+          2.687727212905884,
+          2.0693161487579346,
+          1.957727313041687,
+          1.9590908288955688,
+          3.5272727012634277,
+          6.695227146148682,
+          11.244772911071777,
+          14.773863792419434,
+          13.294090270996094,
+          10.350000381469727,
+          7.209318161010742,
+          4.231818199157715
+        ]
+      }
+    },
+    "AIRT": {
+      "type": "Parameter",
+      "description": "AIR TEMPERATURE",
+      "unit": {
+        "symbol": "DEG C",
+        "@type": [
+          "om2:Unit"
+        ]
       },
-      {
-        "http://www.w3.org/2000/01/rdf-schema#label": [
-          {
-            "@value": "MERIDIONAL WIND"
-          }
+      "observedProperty": {
+        "id": "AIRT",
+        "label": {
+          "en": "AIR TEMPERATURE"
+        },
+        "@type": [
+          "sosa:ObservableProperty"
+        ]
+      },
+      "range": {
+        "type": "NdArray",
+        "dataType": "float64",
+        "axisNames": [
+          "y",
+          "x",
+          "t"
         ],
-        "http://www.w3.org/ns/sosa/observedProperty": [
-          {
-            "@type": [
-              "http://www.w3.org/ns/sosa/ObservableProperty"
-            ],
-            "http://purl.org/dc/terms/identifier": [
-              {
-                "@value": "VWND"
-              }
-            ],
-            "http://www.w3.org/2000/01/rdf-schema#label": [
-              {
-                "@value": "MERIDIONAL WIND",
-                "@language": "en"
-              }
-            ]
-          }
+        "shape": [
+          1,
+          1,
+          12
         ],
-        "http://example.com/iliad-data-access/meta-model/properties/range": [
-          {
-            "http://example.com/iliad-data-access/meta-model/properties/axisNames": [
-              {
-                "@list": [
-                  {
-                    "@value": "y"
-                  },
-                  {
-                    "@value": "x"
-                  },
-                  {
-                    "@value": "t"
-                  }
-                ]
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/datatype": [
-              {
-                "@value": "float64"
-              }
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/shape": [
-              {
-                "@list": [
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 1
-                  },
-                  {
-                    "@value": 12
-                  }
-                ]
-              }
-            ],
-            "@type": [
-              "NdArray"
-            ],
-            "http://example.com/iliad-data-access/meta-model/properties/range-values": [
-              {
-                "@list": [
-                  {
-                    "@value": 0.1581818163394928
-                  },
-                  {
-                    "@value": -0.8207883834838867
-                  },
-                  {
-                    "@value": -0.290909081697464
-                  },
-                  {
-                    "@value": 0.12863637506961823
-                  },
-                  {
-                    "@value": 0.8756818175315857
-                  },
-                  {
-                    "@value": 2.009772777557373
-                  },
-                  {
-                    "@value": 2.596818208694458
-                  },
-                  {
-                    "@value": 1.496363639831543
-                  },
-                  {
-                    "@value": 0.07545454800128937
-                  },
-                  {
-                    "@value": 0.037499990314245224
-                  },
-                  {
-                    "@value": 0.09227270632982254
-                  },
-                  {
-                    "@value": 0.05840909853577614
-                  }
-                ]
-              }
-            ]
-          }
+        "values": [
+          1.8304544687271118,
+          1.2897988557815552,
+          1.9540908336639404,
+          3.101818084716797,
+          5.2284088134765625,
+          8.596136093139648,
+          13.002045631408691,
+          15.681363105773926,
+          13.668863296508789,
+          10.355681419372559,
+          7.054090976715088,
+          3.8068182468414307
+        ]
+      }
+    },
+    "UWND": {
+      "type": "Parameter",
+      "description": "ZONAL WIND",
+      "unit": {
+        "symbol": "M/S",
+        "@type": [
+          "om2:Unit"
+        ]
+      },
+      "observedProperty": {
+        "id": "UWND",
+        "label": {
+          "en": "ZONAL WIND"
+        },
+        "@type": [
+          "sosa:ObservableProperty"
+        ]
+      },
+      "range": {
+        "type": "NdArray",
+        "dataType": "float64",
+        "axisNames": [
+          "y",
+          "x",
+          "t"
         ],
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
-          {
-            "@id": "Parameter"
-          }
+        "shape": [
+          1,
+          1,
+          12
         ],
-        "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
-          {
-            "@type": [
-              "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"
-            ],
-            "http://www.ontology-of-units-of-measure.org/resource/om-2/symbol": [
-              {
-                "@value": "M/S"
-              }
-            ]
-          }
+        "values": [
+          4.3645453453063965,
+          3.7200241088867188,
+          3.0877273082733154,
+          1.702727198600769,
+          1.7129545211791992,
+          2.0529544353485107,
+          1.9027272462844849,
+          1.9197726249694824,
+          2.1536362171173096,
+          2.652045488357544,
+          2.5688636302948,
+          4.094090938568115
+        ]
+      }
+    },
+    "VWND": {
+      "type": "Parameter",
+      "description": "MERIDIONAL WIND",
+      "unit": {
+        "symbol": "M/S",
+        "@type": [
+          "om2:Unit"
+        ]
+      },
+      "observedProperty": {
+        "id": "VWND",
+        "label": {
+          "en": "MERIDIONAL WIND"
+        },
+        "@type": [
+          "sosa:ObservableProperty"
+        ]
+      },
+      "range": {
+        "type": "NdArray",
+        "dataType": "float64",
+        "axisNames": [
+          "y",
+          "x",
+          "t"
         ],
-        "@index": "VWND"
+        "shape": [
+          1,
+          1,
+          12
+        ],
+        "values": [
+          0.1581818163394928,
+          -0.8207883834838867,
+          -0.290909081697464,
+          0.12863637506961823,
+          0.8756818175315857,
+          2.009772777557373,
+          2.596818208694458,
+          1.496363639831543,
+          0.07545454800128937,
+          0.037499990314245224,
+          0.09227270632982254,
+          0.05840909853577614
+        ]
       }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
-      {
-        "@id": "Coverage"
-      }
-    ]
+    }
   },
-  {
-    "@id": "file:///home/runner/work/data_access_api/data_access_api/examples/edr_coverage.jsonld",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://purl.org/dc/terms/format": [
-      {
-        "@value": "application/ld+json"
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "iliad-props": "http://example.com/iliad-data-access/meta-model/properties/",
+    "iliad-types": "http://example.com/iliad-data-access/meta-model/classes/",
+    "iliad-data-types": "http://example.com/iliad-data-access/meta-model/data-types/",
+    "axis": "http://example.com/iliad-data-access/meta-model/classes/axis/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "om2": "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+    "dct": "http://purl.org/dc/terms/",
+    "type": {
+      "@id": "rdf:type",
+      "@type": "@id",
+      "@context": {
+        "@base": "http://example.com/iliad-data-access/meta-model/classes/"
       }
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "git:c87b38648553212457ea9d0b4e682235c411b3f5"
+    },
+    "domain": "iliad-props:domain",
+    "axes": {
+      "@id": "iliad-props:hasAxis",
+      "@container": "@index",
+      "@context": {
+        "@vocab": "http://example.com/iliad-data-access/meta-model/properties/",
+        "values": {
+          "@id": "iliad-props:axis-values",
+          "@container": "@list"
+        }
       }
-    ],
-    "http://www.w3.org/ns/prov#wasAttributedTo": [
-      {
-        "@id": "_:N3aad5e51d5be4258a08537226b0bc18b"
+    },
+    "referencing": {
+      "@id": "iliad-props:referencing",
+      "@context": {
+        "coordinates": {
+          "@id": "iliad-props:coords",
+          "@container": "@list"
+        },
+        "system": "iliad-props:crs",
+        "@base": "http://example.com/iliad-data-access/meta-model/classes/",
+        "type": "@type",
+        "id": "@id"
       }
-    ],
-    "http://www.w3.org/ns/prov#wasGeneratedBy": [
-      {
-        "@id": "_:N3cf5bc14c8e44f8d8ac3c2f0c02437df"
+    },
+    "parameters": {
+      "@id": "iliad-props:hasParameter",
+      "@container": "@index",
+      "@context": {
+        "@base": "http://example.com/iliad-data-access/meta-model/classes/",
+        "description": "rdfs:label",
+        "unit": "om2:hasUnit",
+        "symbol": "om2:symbol",
+        "observedProperty": {
+          "@id": "sosa:observedProperty",
+          "@context": {
+            "id": "dct:identifier",
+            "label": {
+              "@id": "rdfs:label",
+              "@container": "@language"
+            }
+          }
+        },
+        "range": {
+          "@id": "iliad-props:range",
+          "@context": {
+            "type": "@type",
+            "dataType": "iliad-props:datatype",
+            "axisNames": {
+              "@id": "iliad-props:axisNames",
+              "@container": "@list"
+            },
+            "shape": {
+              "@id": "iliad-props:shape",
+              "@container": "@list"
+            },
+            "values": {
+              "@id": "iliad-props:range-values",
+              "@container": "@list"
+            }
+          }
+        }
       }
-    ]
-  },
-  {
-    "@id": "_:N3cf5bc14c8e44f8d8ac3c2f0c02437df",
-    "@type": [
-      "http://www.w3.org/ns/prov#Activity"
-    ],
-    "http://www.w3.org/ns/prov#endedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-05-10T08:29:52.362326"
-      }
-    ],
-    "http://www.w3.org/ns/prov#startedAtTime": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2023-05-10T08:29:51.969309"
-      }
-    ],
-    "http://www.w3.org/ns/prov#used": [
-      {
-        "@id": "_:N37f86862364b43cfb68f40958d08ddda"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasAssociatedWith": [
-      {
-        "@id": "_:N3aad5e51d5be4258a08537226b0bc18b"
-      }
-    ],
-    "http://www.w3.org/ns/prov#wasInformedBy": [
-      {
-        "@id": "_:Ndf745e93a55140008d045d487a93f599"
-      }
-    ]
-  },
-  {
-    "@id": "_:N37f86862364b43cfb68f40958d08ddda",
-    "@type": [
-      "http://www.w3.org/ns/prov#Entity"
-    ],
-    "http://purl.org/dc/terms/format": [
-      {
-        "@value": "application/json"
-      }
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "git:c87b38648553212457ea9d0b4e682235c411b3f5"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "file:///home/runner/work/data_access_api/data_access_api/examples/edr_coverage.json"
-      }
-    ]
-  },
-  {
-    "@id": "_:Ndf745e93a55140008d045d487a93f599",
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "2487db9e-5a78-47da-856d-f2709042e0cb"
-      }
-    ]
-  },
-  {
-    "@id": "_:N3aad5e51d5be4258a08537226b0bc18b",
-    "@type": [
-      "http://www.w3.org/ns/prov#Agent",
-      "https://schema.org/SoftwareApplication"
-    ],
-    "http://purl.org/dc/terms/hasVersion": [
-      {
-        "@value": "0.0.0"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "OGC-NA tools"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://github.com/opengeospatial/ogc-na-tools"
-      }
-    ]
+    }
   }
-]
+}

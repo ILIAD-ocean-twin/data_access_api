@@ -12,20 +12,6 @@
 
 <http://www.opengis.net/def/crs/OGC/1.3/CRS84> a iliad-types:GeographicCRS .
 
-[] a prov:Activity ;
-    prov:endedAtTime "2023-05-10T08:29:52.347867"^^xsd:dateTime ;
-    prov:startedAtTime "2023-05-10T08:29:51.969309"^^xsd:dateTime ;
-    prov:used [ a prov:Entity ;
-            dct:format "application/json" ;
-            dct:hasVersion "git:c87b38648553212457ea9d0b4e682235c411b3f5" ;
-            rdfs:seeAlso <file:///home/runner/work/data_access_api/data_access_api/examples/edr_coverage.json> ] ;
-    prov:wasAssociatedWith [ a prov:Agent,
-                schema:SoftwareApplication ;
-            rdfs:label "OGC-NA tools" ;
-            dct:hasVersion "0.0.0" ;
-            rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> ] ;
-    prov:wasInformedBy [ dct:identifier "2487db9e-5a78-47da-856d-f2709042e0cb" ] .
-
 [] a iliad-types:Coverage ;
     iliad-props:domain [ a iliad-types:Domain ;
             iliad-props:hasAxis [ a axis:Y ;
@@ -88,4 +74,18 @@
             sosa:observedProperty [ a sosa:ObservableProperty ;
                     rdfs:label "SEA SURFACE TEMPERATURE"@en ;
                     dct:identifier "SST" ] ] .
+
+[] a prov:Activity ;
+    prov:endedAtTime "2023-05-10T08:33:22.807110"^^xsd:dateTime ;
+    prov:startedAtTime "2023-05-10T08:33:22.458746"^^xsd:dateTime ;
+    prov:used [ a prov:Entity ;
+            dct:format "application/json" ;
+            dct:hasVersion "git:4a13e60a58ed50ff207470d5f5bbdd7616262bcc" ;
+            rdfs:seeAlso <file:///home/runner/work/data_access_api/data_access_api/examples/edr_coverage.json> ] ;
+    prov:wasAssociatedWith [ a prov:Agent,
+                schema:SoftwareApplication ;
+            rdfs:label "OGC-NA tools" ;
+            dct:hasVersion "0.0.0" ;
+            rdfs:seeAlso <https://github.com/opengeospatial/ogc-na-tools> ] ;
+    prov:wasInformedBy [ dct:identifier "d775f4c2-cddd-431a-953b-8588ef5183e3" ] .
 
