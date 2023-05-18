@@ -29,6 +29,8 @@ Others to be considered in second order Cruise Summary Reports, EDMERP, EDIOS
 SeaDataNet is the profile of the ISO19115. Same time OGC Records contains mappings to ISO:[link]
 some other mappings:[links]
 
+https://github.com/w3c/dxwg/blob/gh-pages/DCAT-ISO19115-mapping.xlsx
+
 ### GeoDCAT
 
 ## Approach
