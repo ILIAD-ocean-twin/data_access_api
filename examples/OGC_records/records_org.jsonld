@@ -1,0 +1,127 @@
+{
+    "@context": [
+        {
+            "schema": "https://schema.org/",
+            "type": "@type",
+            "gsp": "http://www.opengis.net/ont/geosparql#"
+        }
+    ],
+    "id": "07b7ef80-6061-43fc-b874-e2800e9ae547",
+    "conformsTo": [
+        "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+    ],
+    "type": "schema:Place",
+    "time": [
+        null,
+        null
+    ],
+    "created": "2019-03-15T19:51:14",
+    "updated": "2023-03-28T07:01:17Z",
+    "title": "Effective growing season degree days for warm season crops, for 2 weeks",
+    "description": "An accumulated value of heat degrees that the average temperature is above a specified threshold, 10\u00b0C for warm season crops. This condition must be maintained for at least 5 consecutive days in order for EGDD to be accumulated (egdd_warm).\n\nWeek 1 and week 2 forecasted index is available daily from April 1 to October 31.\nWeek 3 and week 4 forecasted index is available weekly (Thursday) from April 1 to October 31.\n\nCumulative heat-energy satisfies the essential requirement of field crop growth and development towards a high yield and good quality of agricultural crop products.\n\nAgriculture and Agri-Food Canada (AAFC) and Environment and Climate Change Canada (ECCC) have together developed a suite of extreme agrometeorological indices based on four main categories of weather factors: temperature, precipitation, heat, and wind.  The extreme weather indices are intended as short-term prediction tools and generated using ECCC\u2019s medium range forecasts to create a weekly index product on a daily and weekly basis.",
+    "providers": [],
+    "externalIds": [
+        {
+            "scheme": "default",
+            "value": "07b7ef80-6061-43fc-b874-e2800e9ae547"
+        }
+    ],
+    "themes": [],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -141.003,
+                    41.6755
+                ],
+                [
+                    -141.003,
+                    83.1139
+                ],
+                [
+                    -52.6174,
+                    83.1139
+                ],
+                [
+                    -52.6174,
+                    41.6755
+                ],
+                [
+                    -141.003,
+                    41.6755
+                ]
+            ]
+        ]
+    },
+    "gsp:hasGeometry": {
+        "@type": "http://www.opengis.net/ont/sf#Polygon",
+        "gsp:asWKT": {
+            "@type": "http://www.opengis.net/ont/geosparql#wktLiteral",
+            "@value": "POLYGON ((-141.003 41.6755, -141.003 83.1139, -52.6174 83.1139, -52.6174 41.6755, -141.003 41.6755))"
+        }
+    },
+    "schema:geo": {
+        "@type": "schema:GeoShape",
+        "schema:polygon": "-141.003,41.6755 -141.003,83.1139 -52.6174,83.1139 -52.6174,41.6755 -141.003,41.6755"
+    },
+    "@id": "http://localhost:5002/collections/records/items/07b7ef80-6061-43fc-b874-e2800e9ae547",
+    "links": [
+        {
+            "href": "http://www.agr.gc.ca/atlas/data_donnees/cli/extremeWeatherIndices/supportdocument_documentdesupport/fr/Indices_de_conditions_meteorologiques_extremes_Chaleur_SPC_ISO_19131.pdf",
+            "rel": "item"
+        },
+        {
+            "href": "http://www.agr.gc.ca/atlas/data_donnees/cli/extremeWeatherIndices/supportdocument_documentdesupport/en/ISO_19131_ExtremeWeatherIndices_Heat_-_Data_Product_Specification.pdf",
+            "rel": "item"
+        },
+        {
+            "href": "http://www.agr.gc.ca/atlas/data_donnees/cli/extremeWeatherIndices/data_donnees/tif/heat/",
+            "rel": "item"
+        },
+        {
+            "href": "http://www.agr.gc.ca/atlas/data_donnees/cli/extremeWeatherIndices/maps_cartes/en/heat/",
+            "rel": "item"
+        },
+        {
+            "href": "http://www.agr.gc.ca/atlas/data_donnees/cli/extremeWeatherIndices/maps_cartes/fr/chaleur/",
+            "rel": "item"
+        },
+        {
+            "type": "application/json",
+            "rel": "root",
+            "title": "The landing page of this server as JSON",
+            "href": "http://localhost:5002?f=json"
+        },
+        {
+            "type": "text/html",
+            "rel": "root",
+            "title": "The landing page of this server as HTML",
+            "href": "http://localhost:5002?f=html"
+        },
+        {
+            "rel": "alternate",
+            "type": "application/geo+json",
+            "title": "This document as GeoJSON",
+            "href": "http://localhost:5002/collections/records/items/07b7ef80-6061-43fc-b874-e2800e9ae547?f=json"
+        },
+        {
+            "rel": "self",
+            "type": "application/ld+json",
+            "title": "This document as RDF (JSON-LD)",
+            "href": "http://localhost:5002/collections/records/items/07b7ef80-6061-43fc-b874-e2800e9ae547?f=jsonld"
+        },
+        {
+            "rel": "alternate",
+            "type": "text/html",
+            "title": "This document as HTML",
+            "href": "http://localhost:5002/collections/records/items/07b7ef80-6061-43fc-b874-e2800e9ae547?f=html"
+        },
+        {
+            "rel": "collection",
+            "type": "application/json",
+            "title": "my datasets or whatever records are about",
+            "href": "http://localhost:5002/collections/records"
+        }
+    ]
+}
