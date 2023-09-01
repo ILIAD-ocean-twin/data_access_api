@@ -31,22 +31,22 @@ Like other OGC APIs, EDR provides entry point landing page with:
  - `/collections` - links to the data and collections
  - `/conformance` - conformance declaration defining which functionalities from the specifications are implemented in particular endpoint
 
-Descritpion of the endpoints is provided in the [API overview](https://ogcapi.ogc.org/edr/overview.html)
+Description of the endpoints is provided in the [API overview](https://ogcapi.ogc.org/edr/overview.html)
 
 Main resources that are exposed in the Iliad EDR are:
  - coverages - each coverage file exposed as one collection, variables available as properties within collection. Data can be queried (trimmed) according to query parameter like cube or point
  - locations - fixed points or areas that defines details of the localisation related to the data gathered for given area. E.g. measurement/sensor localisation with the detailed information about the sensor inline or as link.
  - vector observations - point measurements, camera images and videos that are exposed by the APIs
 
- As the extension for non localised data, alignemnt with sensor description can be considered in the future.
+ As the extension for non localised data, alignment with sensor description can be considered in the future.
 
-EDR APIs supports filtering collections with bounding box, time extent. for more advanced queries, OGC API Records is recommended. As the extestion of the OGC API Features, it can supports multiple properties including free text search and CQL queries.
+EDR APIs supports filtering collections with bounding box, time extent. for more advanced queries, OGC API Records is recommended. As the extension of the OGC API Features, it can supports multiple properties including free text search and CQL queries.
 
 EDR API supports querying data in [multiple ways] (https://docs.ogc.org/is/19-086r5/19-086r5.html#toc44)
 
 ### Multiple APIs
 
-If multiple endpoints needs to be combined, reasonable approach is to organise them in the self-describing hierarchy. In this case root level landing page provides all the underlying links and conformance classes, while each of the sub-APIs refered has detailed information about the resources it exposes.
+If multiple endpoints needs to be combined, reasonable approach is to organise them in the self-describing hierarchy. In this case root level landing page provides all the underlying links and conformance classes, while each of the sub-APIs referred has detailed information about the resources it exposes.
 
 ```
 ─/ <landing page>
