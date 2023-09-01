@@ -1,0 +1,30 @@
+description: >-
+  based on the http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml but with type=MovingPointCloud
+  type: PointCloud and geometry as multipointGeoJSON.yaml.
+  datetimes is mandatory property. all the measurement properties shall be arrays of values with length of multipoint - one-to-one mapping of points and values of measurements.
+required:
+  - type
+  - geometry
+  - properties
+properties:
+  type:
+    type: string
+    enum:
+      - PointCloudFeature #or MultiPointFeature? or simply Feature?
+  geometry:
+    $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/multipointGeoJSON.yaml
+  properties:
+    type: object
+    nullable: true
+    required:
+      - datetime
+    properties:
+      $ref: PointCloudProperty.yml
+  id:
+    oneOf:
+      - type: string
+      - type: integer
+  links:
+    type: array
+    items:
+      $ref: link.yaml

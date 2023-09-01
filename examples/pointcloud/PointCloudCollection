@@ -1,0 +1,38 @@
+$defs:
+  FeaturesCollectionGeoJSON:
+    $ref: https://opengeospatial.github.io/bblocks/annotated-schemas/geo/features/featureCollection/schema.yaml
+  EDRParameter:
+    $ref: https://schemas.opengis.net/ogcapi/edr/1.1/openapi/schemas/edr-geojson/parameter.yaml
+  EDRCollectionExtent:
+    $ref: https://schemas.opengis.net/ogcapi/edr/1.1/openapi/schemas/collections/extent.yaml
+
+description: >-
+  Point cloud feature collection is the OGC API Features extension where each feature is the cloud of points with properties values for each point.
+  All the features exist only within the limit of the time stamp values. These timestamps are listed on the collection level according to the EDR temporal extent model with required 'values'.
+  The motivation was to represent Oil Spil model data that is based on the trajectories of particles. Each particle is syntetic data alowing to the spil modelling generated with multiple physical properties.
+  In generalised approach, data can be the series of the sensors swarm measurements' snapshots organised around snaphosts. Each sensor is a moving and provides multiple measurements and move according to the physical model.
+  extraction of the properties on the collection level metadata allows to limit the bandwith of the measurements payload.
+  The assumption is the particles are identified by the position in the feature and the identification is not significant.
+  It is not MovingPointCloud according to the Moving Features starndard as the properties set contains values for all the points and not values for each datetime.
+allOf:
+  - $ref: #/$defs/FeatureCollectionGeoJSON
+  - type: object
+    required:
+      - parameters
+      - extent
+    properties:
+      parameters:
+        description: list of the data parameters available in the collection
+        type: array
+        items:
+          $ref: >-
+            https://schemas.opengis.net/ogcapi/edr/1.1/openapi/schemas/edr-geojson/parameter.yaml
+      extent:
+        allOf:
+          - $ref: #/$defs/CollectionExent
+          - type: object
+            properties:
+              temporal:
+                type: object
+                required:
+                  - values
