@@ -30,6 +30,8 @@ export PYGEOAPI_OPENAPI=example-openapi.yml
 pygeoapi openapi generate $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI
 pygeoapi serve
 ```
+Open `http://localhost:5002/collections/` in browser
+
 Configuration will serve data from pygeoapi/tests/data/obs.csv
 You can replace this file with your data preserving lon-lat-datetime columns or change example-config-observations.yml
 with your file path
