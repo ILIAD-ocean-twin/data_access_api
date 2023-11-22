@@ -1,0 +1,444 @@
+NOTES:
+location of the munkholmen buoy are in the position_munkholmen
+
+https://oceanlab.azure.sintef.no/d/A5VmLKKnz/operational-data-munkholmen?orgId=1
+sensor data is also here:
+https://oceanlab.azure.sintef.no/d/Pd5SYHD7k/environmental-data-munkholmen?orgId=1
+
+{
+    "type":"FeatureCollection",
+    "features":[
+        {
+            "type":"Feature",
+            "id":"371",
+            "geometry":{
+                "type":"Point",
+                "coordinates":[
+                    -75.0,
+                    45.0
+                ]
+            },
+            "properties":{
+                "stn_id":35,
+                "datetime":"2001-10-30T14:24:55Z",
+                "value":89.9
+            }
+        }
+    ]
+}
+{"type": "FeatureCollection",
+"features":[
+  {"type": "Feature",
+  "id": "1",
+  "geometry": {
+                  "type":"Point",
+                  "coordinates":[
+                      -75.0,
+                      45.0
+                  ]
+              },
+  "properties": {
+    "resultTime": "2023-05-01 02:00:31.547371+00:00",
+    "phenomenonTime": "2023-05-01 02:00:31.547371+00:00",
+    "madeBySensor": "https://sintef.twin-ocean.eu/data//munkholmen/munkholmen_topside_pi/ctd",
+    "hasFeatureOfInterest": "https://sintef.twin-ocean.eu/data//Thing/munkholmen",
+    "observedProperty": "http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/",
+    "wasOriginatedBy": "UNKNOWN maybe clock",
+    "deployedSystem": "munkholmen",
+    "unit": "degrees_celcius",
+    "value": 6.5138
+   }
+  }
+]
+}
+
+{"type": "FeatureCollection",
+"features": [
+  {"type": "Feature",
+  "id": 1,
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      -75.0,
+      45.0
+      ]
+    },
+  "properties": {
+    "resultTime": "2023-05-01 02:00:31.547371+00:00",
+    "phenomenonTime": "2023-05-01 02:00:31.547371+00:00",
+    "madeBySensor": "https://sintef.twin-ocean.eu/data//munkholmen/munkholmen_topside_pi/ctd",
+    "hasFeatureOfInterest": "https://sintef.twin-ocean.eu/data//Thing/munkholmen",
+    "observedProperty": "http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/",
+    "wasOriginatedBy": "UNKNOWN maybe clock",
+    "deployedSystem": "munkholmen",
+    "unit": "degrees_celcius",
+    "value": 6.5138
+  }
+ }
+]
+}
+
+{"type": "FeatureCollection",
+"features":[
+  {"type": "Feature",
+  "id": "1",
+  "geometry": {
+                  "type":"Point",
+                  "coordinates":[
+                      -75.0,
+                      45.0
+                  ]
+              },
+  "properties": {
+     "resultTime": "2023-05-01 02:00:31.547371+00:00",
+     "phenomenonTime": "2023-05-01 02:00:31.547371+00:00",
+     "madeBySensor": "https://sintef.twin-ocean.eu/data//munkholmen/munkholmen_topside_pi/ctd",
+     "hasFeatureOfInterest": "https://sintef.twin-ocean.eu/data//Thing/munkholmen",
+     "observedProperty": "http://vocab.nerc.ac.uk/standard_name/sea_surface_temperature/",
+     "wasOriginatedBy": "UNKNOWN maybe clock",
+     "deployedSystem": "munkholmen",
+     "unit": "degrees_celcius",
+     "value": 6.5138
+   }
+  }
+],
+"numberMatched": 1}
+
+
+air_temperature_feature
+{
+  "@id": "munkholmen_gps_cr6_2023050100:00:00”,
+  "type": "Feature",
+  "featureType": "sosa:Observation",
+  "geometry": position+depth,
+  "properties": {
+    "resultTime": "2023-05-01 00:00:00",
+    "comment": "Air temperature ",
+"hasFeatureOfInterest”: ”[MunkholmenURI]”,
+"approved”: "yes”,
+"madeBySensor”: "[munkholmen cr6 sensor URI]”,
+"observedProperty”: "http://vocab.nerc.ac.uk/standard_name/air_temperature/",
+"hasResult”: {"numericValue”: 3.1, "unit”: "celcius_degres”}
+}
+
+maybe LOCATION MAYBE not needed?
+{
+  "@id": "munkholmen_location_2023-10-25T23:00:19”,
+  "type": "Feature",
+  "featureType": "sosa:Observation",
+  "geometry": "POINT(63.457478,10.372276)”,
+  "properties": {
+    "observedProperty": "https://www.w3.org/2003/01/geo/wgs84_pos#location”,
+    "resultTime": "2023-10-25T23:00:19Z",
+    "comment": "Munkhomen location at time 2023-10-25T23:00:19Z",
+"hasFeatureOfInterest”: ”[MunkholmenURI]”,
+"approved”: "yes”,
+"madeBySensor”: "[munkholmen gps sensor URI]”,
+"hasResult”: [{"numericValue”: 63.457478, "unit”: "degrees_east”},{"numericValue”: 10.372276, "unit”: "degrees_north”}]
+"hasResult”: {"latitude”: 63.457478, "longitude”: 10.372276, "crs":"http://www.opengis.net/def/crs/OGC/1.3/CRS84"}
+}
+
+MunkholmenURI
+{
+"id": "Munkholmen_site",
+"type": "Feature",
+"comment": "Munkholmen site",
+"geometry": "bbox including all the locations in the past"
+}
+
+munkholmen gps sensor URI{
+"id": "munkholmen_gps_sensor",
+"type": "Feature",
+"comment": "Munkholmen site",
+"geometry": "bbox including all the locations in the past"
+"properties":{
+    "type": "http://iot.ee.surrey.ac.uk/fiesta/ontology/iot-taxonomy-lite/#GPSSensor"
+  }
+}
+
+
+unkholmen cr6 sensor URI{
+"id": "munkholmen_cr6_sensor",
+"type": "Feature",
+"comment": "Munkholmen cr6 sensor",
+"geometry": "bbox including all the locations in the past"
+"properties":{
+    "type": "http://iot.ee.surrey.ac.uk/fiesta/ontology/iot-taxonomy-lite/#Thermometer or CR6 URI"
+  }
+}
+
+
+
+{
+  "type" : "CoverageCollection",
+  "domainType" : "VerticalProfile",
+  "parameters" : {
+    "PSAL": {
+      "type" : "Parameter",
+      "description" : {
+        "en": "The measured salinity, in practical salinity units (psu) of the sea water"
+      },
+      "unit" : {
+        "symbol" : "psu"
+      },
+      "observedProperty" : {
+        "id": "http://vocab.nerc.ac.uk/standard_name/sea_water_salinity/",
+        "label" : {
+          "en": "Sea Water Salinity"
+        }
+      }
+    }
+  },
+  "referencing": [{
+    "coordinates": ["x","y"],
+    "system": {
+      "type": "GeographicCRS",
+      "id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    }
+  }, {
+    "coordinates": ["z"],
+    "system": {
+      "type": "VerticalCRS",
+      "cs": {
+        "csAxes": [{
+          "name": {
+            "en": "Pressure"
+          },
+          "direction": "down",
+          "unit": {
+            "symbol": "Pa"
+          }
+        }]
+      }
+    }
+  }, {
+    "coordinates": ["t"],
+    "system": {
+      "type": "TemporalRS",
+      "calendar": "Gregorian"
+    }
+  }],
+  "coverages": [
+    {
+      "type" : "Coverage",
+      "domain" : {
+        "type": "Domain",
+        "axes": {
+      "composite": {
+        "dataType": "polygon",
+        "coordinates": ["x","y"],
+        "values": [
+          [[[9.92,54.98],[9.93,54.59],[13.64,54.07],[15.01,51.10],[12.24,50.26],
+            [12.52,49.54],[13.59,48.87],[12.88,48.28],[13.02,47.63],[9.59,47.52],
+            [8.52,47.83],[7.46,47.62],[8.09,49.01],[6.18,49.46],[5.98,51.85],
+            [6.84,52.22],[7.10,53.69],[8.80,54.02],[8.52,54.96],[9.92,54.98]]]
+        ]
+      },
+      "t" : { "values": ["2013","2014","2015"] }
+    }
+      },
+      "ranges" : {
+        "PSAL" : {
+          "type" : "NdArray",
+          "dataType": "float",
+          "shape": [3],
+          "axisNames": ["z"],
+          "values" : [ 43.7, 43.8, 43.9 ]
+        }
+      }
+    }, {
+      "type" : "Coverage",
+      "domain" : {
+        "type": "Domain",
+        "axes": {
+          "x": { "values": [-11.1] },
+          "y": { "values": [-45.2] },
+          "z": { "values": [ 4, 7, 9 ] },
+          "t": { "values": ["2013-01-13T12:12:20Z"] }
+        }
+      },
+      "ranges" : {
+        "PSAL" : {
+          "type" : "NdArray",
+          "dataType": "float",
+          "shape": [3],
+          "axisNames": ["z"],
+          "values" : [ 42.7, 41.8, 40.9 ]
+        }
+      }
+    }]
+}
+
+
+working polygonseries
+{
+  "type" : "Coverage",
+  "domain" : {
+    "type" : "Domain",
+    "domainType": "PolygonSeries",
+  "axes": {"composite": {
+      "dataType": "polygon",
+      "coordinates": ["x","y"],
+      "values": [
+        [ [ [1.1, 0.0], [2.0, 0.0], [2.0, 1.0], [1.0, 1.0], [1.1, 0.0] ]  ]
+      ]
+    },
+    "t": { "values": ["2008-01-01T04:00:00Z","2008-01-01T05:00:00Z"] }
+ },
+    "referencing": [{
+      "coordinates": ["x","y"],
+      "system": {
+        "type": "GeographicCRS",
+        "id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      }
+    }, {
+      "coordinates": ["t"],
+      "system": {
+        "type": "TemporalRS",
+        "calendar": "Gregorian"
+      }
+    }]
+  },
+  "parameters" : {
+    "POTM": {
+      "type" : "Parameter",
+      "description" : {
+      	"en": "The potential temperature, in degrees celcius, of the sea water"
+      },
+      "unit" : {
+        "label": {
+          "en": "Degree Celsius"
+        },
+        "symbol": {
+          "value": "Cel",
+          "type": "http://www.opengis.net/def/uom/UCUM/"
+        }
+      },
+      "observedProperty" : {
+        "id" : "http://vocab.nerc.ac.uk/standard_name/sea_water_potential_temperature/",
+        "label" : {
+          "en": "Sea Water Potential Temperature"
+        }
+      }
+    },
+    "PSAL": {
+      "type" : "Parameter",
+      "description" : {
+      	"en": "The measured salinity, in practical salinity units (psu) of the sea water "
+      },
+      "unit" : {
+        "symbol" : "psu"
+      },
+      "observedProperty" : {
+        "id" : "http://vocab.nerc.ac.uk/standard_name/sea_water_salinity/",
+        "label" : {
+          "en": "Sea Water Salinity"
+        }
+      }
+    }
+
+  },
+  "ranges" : {
+        "POTM" : {
+      "type" : "NdArray",
+      "dataType": "float",
+      "axisNames": ["t"],
+      "shape": [2],
+      "values" : [ 23.8, 23.7]
+    },
+    "PSAL" : {
+      "type" : "NdArray",
+      "dataType": "float",
+      "axisNames": ["t"],
+      "shape": [2],
+      "values" : [ 43.9599, 45.9599 ]
+    }
+
+  }
+}
+
+
+working multicoverages (each coverage for each area of measurement)
+{
+  "type" : "CoverageCollection",
+  "domainType" : "PolygonSeries",
+  "parameters" : {
+    "PSAL": {
+      "type" : "Parameter",
+      "description" : {
+        "en": "The measured salinity, in practical salinity units (psu) of the sea water"
+      },
+      "unit" : {
+        "symbol" : "psu"
+      },
+      "observedProperty" : {
+        "id": "http://vocab.nerc.ac.uk/standard_name/sea_water_salinity/",
+        "label" : {
+          "en": "Sea Water Salinity"
+        }
+      }
+    },
+    "SST": {
+      "type" : "Parameter",
+      "description" : {
+        "en": "The measured salinity, in practical salinity units (psu) of the sea water"
+      },
+      "unit" : {
+        "symbol" : "degrees_celcius"
+      },
+      "observedProperty" : {
+        "id": "http://vocab.nerc.ac.uk/standard_name/sea_water_temperature/",
+        "label" : {
+          "en": "Sea Water Salinity"
+        }
+      }
+    }
+  },
+  "referencing": [{
+    "coordinates": ["x","y"],
+    "system": {
+      "type": "GeographicCRS",
+      "id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    }
+  }, {
+    "coordinates": ["t"],
+    "system": {
+      "type": "TemporalRS",
+      "calendar": "Gregorian"
+    }
+  }],
+  "coverages": [
+    {
+      "type" : "Coverage",
+      "domain" : {
+        "type": "Domain",
+        "axes": {"composite": {
+      "dataType": "polygon",
+      "coordinates": ["x","y"],
+      "values": [
+        [ [ [1.1, 0.0], [2.0, 0.0], [2.0, 1.0], [1.0, 1.0], [1.1, 0.0] ]  ]
+      ]
+    },
+    "t": { "values": ["2008-01-01T04:00:00Z","2008-01-01T05:00:00Z"] }
+ }
+      },
+      "ranges" : {
+        "PSAL" : {
+          "type" : "NdArray",
+          "dataType": "float",
+          "shape": [2],
+          "axisNames": ["t"],
+          "values" : [ 43.7, 43.8 ]
+        }
+      },
+
+        "SST" : {
+          "type" : "NdArray",
+          "dataType": "float",
+          "shape": [2],
+          "axisNames": ["t"],
+          "values" : [ 43.7, 43.8 ]
+        }
+      }
+    }]
+}
