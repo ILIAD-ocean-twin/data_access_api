@@ -7,14 +7,17 @@ This representation is good for measurements in constant locations.
 [Todo: Zarr equivalent]
 
 These formats represent data as multidimentional grids of values. area and time for which values can be readed is called domain (analogous to mathematical function domain). Likewise, range is the set of values.
+
+
+
+# One point, shared sampling timestamps
+In case of single, stationary station
 The dimensions of the time series for one point are:
 * x - longitute - single value for each point
 * y - latitude - single value for each point
 * z - height/depth - optional, single value for each point
 * t - sampleing time - a list of values
-
-
-# One point, shared sampling timestamps
+Dimensions of the data define the points in time and space where the
 In the CoverageJSON, they are defined as 'domain':
 ```
 "domain": {
@@ -171,6 +174,10 @@ float elevation;
 
 # Multiple points, shared sampling timestamps
 In case of different points sharing the sampling timestamps, spatal dimensions are turned into composites like in the MultiPointSeries [example](https://docs.ogc.org/cs/21-069r2/21-069r2.html#_02f1c364-8655-4fb4-aaab-03a9858d30fb) or [NCEI_TimeSeriesProfile_OrthogonalVertical_IncompleteTemporal](https://www.ncei.noaa.gov/data/oceans/ncei/formats/netcdf/v2.0/timeSeriesProfileOrthoVIncomT.cdl)NetCDF equivalent.
+
+# Moving point, or points with synchronised sampling timestamps
+
+Movign point of measument can be represented as the trajectory supported both by the Trajectory NCEI template and CoverageJSON Trajectory. Multiple trajectories are not supported explicitly within mentioned formats' templates. CoverageJSON supports Coverage Collection where separate domains can be defined for each trajectory, while each would have the same sampling timestamp collection, which is sub-optimal.
 
 # Multiple points, independent sampling timestamps
 
