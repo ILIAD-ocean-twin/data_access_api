@@ -17,8 +17,8 @@ The dimensions of the time series for one point are:
 * y - latitude - single value for each point
 * z - height/depth - optional, single value for each point
 * t - sampleing time - a list of values
-Dimensions of the data define the points in time and space where the
-In the CoverageJSON, they are defined as 'domain':
+
+In CoverageJSON, the domain can be defined on the Coverage or CoverageCollection level. Simple dimensions are list of values or interval (start-end) plus number of equal steps between.
 ```
 "domain": {
     "type": "Domain",
