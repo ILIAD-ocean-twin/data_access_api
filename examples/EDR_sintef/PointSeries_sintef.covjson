@@ -1,5 +1,7 @@
 {
-    "type": "CoverageCollection",
+"@context": "PoitSeries_covjson_context.json",
+
+"type": "CoverageCollection",
     "domainType": "PointSeries",
     "coverages": [
         {
