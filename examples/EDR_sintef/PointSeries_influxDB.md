@@ -16,6 +16,23 @@ Example: measurement 'a' is given at t0, t4, t6, measurement 'b' is given at t1,
 # API constraints
 
 The consequences of the structure for API exposing measuments are:
-* it is safe to keep each measument type from particular sensor separately, so the query for all the measument types is not vary probable
-*  Following EDR API collections structure, lowest level of collection properties reflects properties from given station if the NetCDF NCEI templates and equivalent Zarr representation shall be suported on the endpoint. lowest level of collection including properties from all the stations is still possible with CoverageJSON
-* collection could be then whole set of data from the database but with constraints on the required selected-parameters call parameters.
+* to keep data simple, either 1 collection shall include only one property or the collection queries shall be limited to one property (constraint to EDR reference)
+* it is safe to keep each measument type from particular sensor separately in queries, querying all the measurements stream is not recommended but can be supported by the internal collection/additional dimension.
+*  Following EDR API collections structure, lowest level of collection properties reflects observed properties from given station.
+
+* separation of
+
+Proposed API collections structure could be hierarchical:
+```
+\collections - list all highest level collections
+\collections\search - extension to EDR to search for collections by the observed property
+\collections\{provider/group} - collection with all the measuments (like temp, salinity) but with the constraint only one can be queried at the same time.
+\collections\{provider/group+location} - collection with all the measuments (like temp, salinity) from given location with the the constraint only one can be queried at the same time. it shall contain the links directly to the queryable properties. Data type is Point Series in case of constant (approximate) location
+```
+
+or flattened to one
+```
+\collections - list all highest level collections
+\collections\search
+\collections\{provider_dataset} - collection with all the measuments (like temp, salinity) from given location with the the constraint only one can be queried at the same time. it shall contain the links directly to the queryable properties. Data type is also Point Series in case of constant (approximate) location.
+```
