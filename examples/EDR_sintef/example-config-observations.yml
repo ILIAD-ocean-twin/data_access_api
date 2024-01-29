@@ -226,6 +226,11 @@ resources:
               hreflang: en-US
               href: http://localhost:5002/influx-edr
               title: base url
+            - type: application/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/influx-edr/cube?bbox=10,58,12,60&datetime=2023-05-01T02:25:00Z/2023-05-01T02:30:00Z&f=json&parameter_names=sea_water_temperature
+              title: example json-ld query all properties by 2D bbox (10.4,35.5,11.26,36.31) coordinates and time slice 2023-07-16T02:00Z - 2023-07-16T02:00Z and sea_water_temperature
             - type: text/html
               rel: canonical
               hreflang: en-US
