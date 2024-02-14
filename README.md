@@ -6,7 +6,7 @@ Federated architecture of the Digital Twin can require several types of the inte
 * data and services discovery: allows to browse and filter resources useful for the twin or being its products and navigate to access services; it is usually realised by the interfaces allowing for metadata browsing, that is realised by the catalogue services (T4.1 and T4.3). To ensure harmonised twin use, it is important to align metadata on the catalogue and access levels.
 * data access: twin data embraces source data from project sensors, 3rd party data exposed by intermediary hubs and data generated from models,
 * services access: access to applications executing Twin models like forecasts and simulations, but also analytical tools generating compositions of the data; in the project it is covered by the WP5. Alignment with DTO API concerns input and output metadata alignment and potentially mechanism that generated data can be exposed via DTO data access APIs.
-* geospatial user feedback (GUF): allows users to report not only generic comments and ratings about a specific dataset, but it allows them to document several aspects related to the purpose of that feedback, to share publications connected with that data or describe specific usages. In this last case, users can also provide documentation of their usage of the target resource(s) as well as report issues or share specific codes or execution sentences. All this information can be referred to a whole dataset/product or to a specific geographical area that can be also documented. GUF standard documentation and schemas have been updated to version 2 (https://github.com/opengeospatial/Geospatial-User-Feedback/tree/main), which extends GUF 1.0 to allow storing reproducible usage. Moreover, an OPEN OGC API based on OGC API records and its implementation in the NiMMbus system (nimmbus.cat) as well as a new standard for GUF JSON codification are being developed.
+* geospatial user feedback (GUF): allows users to report not only generic comments and ratings about a specific dataset, but it allows them to document several aspects related to the purpose of that feedback, to share publications connected with that data or describe specific usages. In this last case, users can also provide documentation of their usage of the target resource(s) as well as report issues or share specific codes or execution sentences. All this information can be referred to a whole dataset/product or to a specific geographical area that can be also documented. GUF standard documentation and schemas have been updated to [version 2](https://github.com/opengeospatial/Geospatial-User-Feedback/tree/main), which extends GUF 1.0 to allow storing reproducible usage. Moreover, an OPEN OGC API based on OGC API records and its implementation in the NiMMbus system (nimmbus.cat) as well as a new standard for GUF JSON codification are being developed.
 
 This repository focuses on the data access APIs that is not covered by other tasks but shall be semantically integrated with these. At the same time, data models and querying shall be adoptable to the various protocols like event streaming and catalogs.
 
@@ -36,13 +36,13 @@ All the APIs shall follow several requirements for the alignments:
 
 ## SensorThings APIs
 
-(SensorThings API)[https://ogcapi.ogc.org/sensorthings/] is the OGC standard endorsed as the INSPIRE good practice to share observations data. It is compliant with the ISO 19156/OGC Observations & Measurements standards.
-Entry level descriptions of the API are available on the (Wikipedia)[https://en.wikipedia.org/wiki/SensorThings_API]
+[SensorThings API](https://ogcapi.ogc.org/sensorthings/) is the OGC standard endorsed as the INSPIRE good practice to share observations data. It is compliant with the ISO 19156/OGC Observations & Measurements standards.
+Entry level descriptions of the API are available on the [Wikipedia](https://en.wikipedia.org/wiki/SensorThings_API)
 
 ### Use cases
 
 STA is flexible standard useful in particular for:
- - exposing observations with all the Sensor, Observed Properties, Location in a flexible way so that client can build the query to access observations in the light way and get the whole related data though simple queries (like joins in SQL). Example STA demo is available on the (PSNC infrastruture)[https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/]
+ - exposing observations with all the Sensor, Observed Properties, Location in a flexible way so that client can build the query to access observations in the light way and get the whole related data though simple queries (like joins in SQL). Example STA demo is available on the [PSNC infrastruture](https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/)
  - providing observation as the data stream as STA was design to support both request/response model on HTTP and pub/sub on MQTT
  - providing observation context definition as the supplement for the aggregated data e.g. linking aggregated in NetCDF/Zarr/EDR API to the Sensor and Location.
  - use of ODATA clients
@@ -50,29 +50,29 @@ STA is flexible standard useful in particular for:
  ### How to implement
 
 As the API is open one can choose to:
- - use hosted environment like the (PSNC implementation with data hosting)[https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/#/json/get_Observations] that can consume file based data like CSV. The advantage is this service provides integration with the Ocean Information Model given.
- - setup the known implementations from the (STA website)[https://ogcapi.ogc.org/sensorthings/], it requires integration with Ocean Information Model in own way. The simplest one is to add JSON-LD context definition as the reference
- - implement the service based on the (OpenAPI definition - work in progress)[https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/]. OpenAPI tools can generate server stub for number of languages. Stub needs to be filled with logic querying data from the back-end.
+ - use hosted environment like the [PSNC implementation with data hosting](https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/#/json/get_Observations) that can consume file based data like CSV. The advantage is this service provides integration with the Ocean Information Model given.
+ - setup the known implementations from the [STA website](https://ogcapi.ogc.org/sensorthings/), it requires integration with Ocean Information Model in own way. The simplest one is to add JSON-LD context definition as the reference
+ - implement the service based on the [OpenAPI definition - work in progress](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/). OpenAPI tools can generate server stub for number of languages. Stub needs to be filled with logic querying data from the back-end.
  - implement hybrid solution that can be
   - reference implementation with the default endpoint replaced by own database
 
 
 
-Extensions of the API shall be defined using the (OGC Building Block for STA)[https://github.com/ogcincubator/bblocks-sta] template to ensure OIM integration.
+Extensions of the API shall be defined using the [OGC Building Block for STA](https://github.com/ogcincubator/bblocks-sta) template to ensure OIM integration.
 
 ### Iliad API compliance
 
 Iliad proposes following extensions to the STA API:
 - Capabilities declaration based on the OGC API Commons
 - OIM alignment with context definition or inline alignment
-- extensions for the STA payload formalised based on the (OGC Building Block for STA)[https://github.com/ogcincubator/bblocks-sta]
+- extensions for the STA payload formalised based on the [OGC Building Block for STA](https://github.com/ogcincubator/bblocks-sta)
 
 
 #### Capabilities declaration
 
 Following recent practices in the OGC APIs that is not yet adopted in the OGC STA, proposed extension include coherent:
--  (conformance declaration)[https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getRequirementsClasses],
-- (landing page)[https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getLandingPage] with all the relevant consequent links,
+-  [conformance declaration](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getRequirementsClasses),
+- [landing page](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getLandingPage) with all the relevant consequent links,
 - api definition link.
 
 ```
@@ -97,7 +97,7 @@ Example alignment through context:
   "@context": "https://ogcincubator.github.io/bblocks-sta/build/annotated/bbr/template/Observation/context.jsonld"
 }
 ```
-In this example, the only change in the payload is the context link that explain all the data. This way, data can be interpreted unambiguously based on known ontologies in (RDF)[https://ogcincubator.github.io/bblocks-sta/build/tests/bbr/template/Observation/example_1_1.ttl]
+In this example, the only change in the payload is the context link that explain all the data. This way, data can be interpreted unambiguously based on known ontologies in [RDF](https://ogcincubator.github.io/bblocks-sta/build/tests/bbr/template/Observation/example_1_1.ttl)
 ```
 @prefix sosa1: <https://www.w3.org/TR/vocab-ssn/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -109,8 +109,8 @@ In this example, the only change in the payload is the context link that explain
 ```
 
 Alignment can be done by:
-- (context)[https://ogcincubator.github.io/bblocks-sta/bblock/ogc.bbr.template.Observation/json-ld] defined as linked resource, it makes payload limited and benefit fully from JSON simplicity
-- inline contextualisation (PSNC implementation)[https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/#/json/get_Observations]
+- [context](https://ogcincubator.github.io/bblocks-sta/bblock/ogc.bbr.template.Observation/json-ld) defined as linked resource, it makes payload limited and benefit fully from JSON simplicity
+- inline contextualisation [PSNC implementation](https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/#/json/get_Observations)
 
 
 Base building blocks from OGC provide the context files for the core standard. Extensions of the context shall inherit these definitions but can extend it according to the use case. Building Blocks register provide functionality to build the context based on the provided ontologies and is recommended tool for own context definitions.
@@ -132,7 +132,7 @@ Usual case is that observation DataStream, Sensor, Observations for the individu
 }
 ```
 To make API OIM compliant:
-- one SHALL define extended context definition inheriting from (base one)[https://github.com/ogcincubator/bblocks-sta/tree/master].
+- one SHALL define extended context definition inheriting from [base one](https://github.com/ogcincubator/bblocks-sta/tree/master).
  - one MAY refer to the new schema from the API definition, for example openAPI YAML schema for HTTP code 200
 
  OGC Building blocks register toolset helps to define the whole profile including: schema, context, examples, description.
