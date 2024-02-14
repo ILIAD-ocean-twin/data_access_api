@@ -1,17 +1,17 @@
-## SensorThings APIs
+# SensorThings APIs
 
 [SensorThings API](https://ogcapi.ogc.org/sensorthings/) is the OGC standard endorsed as the INSPIRE good practice to share observations data. It is compliant with the ISO 19156/OGC Observations & Measurements standards.
 Entry level descriptions of the API are available on the [Wikipedia](https://en.wikipedia.org/wiki/SensorThings_API)
 
-### Use cases
+## Use cases
 
 STA is flexible standard useful in particular for:
  - exposing observations with all the Sensor, Observed Properties, Location in a flexible way so that client can build the query to access observations in the light way and get the whole related data though simple queries (like joins in SQL). Example STA demo is available on the [PSNC infrastruture](https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/)
- - providing observation as the data stream as STA was design to support both request/response model on HTTP and pub/sub on MQTT
+ - providing observation as the data stream. STA was designed to support both request/response model on HTTP and pub/sub on MQTT
  - providing observation context definition as the supplement for the aggregated data e.g. linking aggregated in NetCDF/Zarr/EDR API to the Sensor and Location.
  - use of ODATA clients
 
- ### How to implement
+ ## How to implement
 
 As the API is open one can choose to:
  - use hosted environment like the [PSNC implementation with data hosting](https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/#/json/get_Observations) that can consume file based data like CSV. The advantage is this service provides integration with the Ocean Information Model given.
@@ -24,28 +24,14 @@ As the API is open one can choose to:
 
 Extensions of the API shall be defined using the [OGC Building Block for STA](https://github.com/ogcincubator/bblocks-sta) template to ensure OIM integration.
 
-### Iliad API compliance
+## Iliad API compliance
 
 Iliad proposes following extensions to the STA API:
+- [mandatory] OIM alignment with context definition or inline alignment
 - Capabilities declaration based on the OGC API Commons
-- OIM alignment with context definition or inline alignment
 - extensions for the STA payload formalised based on the [OGC Building Block for STA](https://github.com/ogcincubator/bblocks-sta)
 
-
-#### Capabilities declaration
-
-Following recent practices in the OGC APIs that is not yet adopted in the OGC STA, proposed extension include coherent:
--  [conformance declaration](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getRequirementsClasses),
-- [landing page](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getLandingPage) with all the relevant consequent links,
-- api definition link.
-
-```
-\ - landing page
-\conformance - conformance declaration
-\api - api definition
-
-```
-#### OIM alignment
+### OIM alignment
 
 Ocean Information Model alignment means definitions used in the payload has definitions explicitly defined so that various APIs use the sam definitions for the common entities.
 Example alignment through context:
@@ -79,7 +65,7 @@ Alignment can be done by:
 
 Base building blocks from OGC provide the context files for the core standard. Extensions of the context shall inherit these definitions but can extend it according to the use case. Building Blocks register provide functionality to build the context based on the provided ontologies and is recommended tool for own context definitions.
 
-#### Data model profiled
+### Data model profiled
 
 Usual case is that observation DataStream, Sensor, Observations for the individual use case provide additional information. Example extended Observation:
 ```
@@ -100,3 +86,17 @@ To make API OIM compliant:
  - one MAY refer to the new schema from the API definition, for example openAPI YAML schema for HTTP code 200
 
  OGC Building blocks register toolset helps to define the whole profile including: schema, context, examples, description.
+
+ ### Capabilities declaration
+
+ Following recent practices in the OGC APIs that is not yet adopted in the OGC STA, proposed extension include coherent:
+ -  [conformance declaration](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getRequirementsClasses),
+ - [landing page](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/Capabilities/getLandingPage) with all the relevant consequent links,
+ - api definition link.
+
+ ```
+ \ - landing page
+ \conformance - conformance declaration
+ \api - api definition
+
+ ```
