@@ -14,6 +14,17 @@ The intent is to provide schemas and examples of the encodings for selected APIs
 For selected APIs, repository contains example configurations of the API service based on extensions of the reference implementations.
 
 ## Considered metadata definitions
+
+### OGC API Records
+
+OGC API Records
+
+### ISO 19115
+SeaDataNet is the profile of the ISO19115. Same time OGC Records contains mappings to ISO:[link]
+some other mappings:[links]
+
+https://github.com/w3c/dxwg/blob/gh-pages/DCAT-ISO19115-mapping.xlsx
+
 ### SeaDataNet
 
 SeaDataNet schema for environmental (EDMED) data and Common Data Index (CDS):
@@ -25,11 +36,6 @@ CDS is considered for recommended compliance of catalog service - OGC API record
 
 Others to be considered in second order Cruise Summary Reports, EDMERP, EDIOS
 
-### ISO 19115
-SeaDataNet is the profile of the ISO19115. Same time OGC Records contains mappings to ISO:[link]
-some other mappings:[links]
-
-https://github.com/w3c/dxwg/blob/gh-pages/DCAT-ISO19115-mapping.xlsx
 
 ### GeoDCAT
 
