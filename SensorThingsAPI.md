@@ -103,10 +103,13 @@ To make API OIM compliant:
  ```
 
 Simplified API defined under [SwaggerHub](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/) is conformant to following classes:
-All the main entities:
-http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/thing
-http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/location
-http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/datastream
+
+
+| All the main entities |
+|-----|
+| http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/thing |
+| http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/location |
+| http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/datastream |
 http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/sensor
 http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/observed-property
 http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/observation
@@ -115,32 +118,29 @@ http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/entity-control-inform
 http://www.opengis.net/spec/iot_sensing/1.1/conf/resource-path
 http://www.opengis.net/spec/iot_sensing/1.1/conf/resource-path/resource-path-to-entities
 
-Selected request operations:
+
+| Selected request operations |
+|-----|
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/order
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/select
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/status-code
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/query-status-code
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/orderby
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/top
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/skip
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/count
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/filter
-
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/pagination
 
 
 Simplified API does not have to be conformant to following, while it depends on the use case:
+
 For reference implementations deployment following will be included:
-http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/historical-location
+
+| Advanced queries and CRUD operations|
+|-----|
+|http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/historical-location|
 http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/expand
 http://www.opengis.net/spec/iot_sensing/1.1/conf/data-array
 http://www.opengis.net/spec/iot_sensing/1.1/conf/data-array/data-array
@@ -164,6 +164,9 @@ http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/update-ent
 http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/update-entity-jsonpatch
 
 For streaming data interface following shall be implemented
+
+| MQTT support |
+|-----|
 http://www.opengis.net/spec/iot_sensing/1.1/conf/create-observations-via-mqtt
 http://www.opengis.net/spec/iot_sensing/1.1/conf/create-observations-via-mqtt/observations-creation
 http://www.opengis.net/spec/iot_sensing/1.1/conf/receive-updates-via-mqtt
