@@ -33,7 +33,7 @@ Iliad proposes following extensions to the STA API:
 
 ### OIM alignment
 
-Ocean Information Model alignment means definitions used in the payload has definitions explicitly defined so that various APIs use the sam definitions for the common entities.
+Ocean Information Model alignment means terms used in the payload has definitions explicitly referred so that various APIs use the sam definitions for the common entities supporting both human and machine readability.
 Example alignment through context:
 ```
 {
@@ -48,6 +48,7 @@ Example alignment through context:
 }
 ```
 In this example, the only change in the payload is the context link that explain all the data. This way, data can be interpreted unambiguously based on known ontologies in [RDF](https://ogcincubator.github.io/bblocks-sta/build/tests/bbr/template/Observation/example_1_1.ttl)
+
 ```
 @prefix sosa1: <https://www.w3.org/TR/vocab-ssn/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -96,7 +97,74 @@ To make API OIM compliant:
 
  ```
  \ - landing page
- \conformance - conformance declaration
+ \conformance - conformance declaration, it is potentially redundant with the STA conformance declaration but inline with OGC Commons.
  \api - api definition
 
  ```
+
+Simplified API defined under [SwaggerHub](https://app.swaggerhub.com/apis/PZB/Iliad-simplified-SensorThings-API/1.0.0#/) is conformant to following classes:
+All the main entities:
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/thing
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/location
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/datastream
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/sensor
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/observed-property
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/observation
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/feature-of-interest
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/entity-control-information
+http://www.opengis.net/spec/iot_sensing/1.1/conf/resource-path
+http://www.opengis.net/spec/iot_sensing/1.1/conf/resource-path/resource-path-to-entities
+
+Selected request operations:
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/order
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/select
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/status-code
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/query-status-code
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/orderby
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/top
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/skip
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/count
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/filter
+
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/pagination
+
+
+Simplified API does not have to be conformant to following, while it depends on the use case:
+For reference implementations deployment following will be included:
+http://www.opengis.net/spec/iot_sensing/1.1/conf/datamodel/historical-location
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/expand
+http://www.opengis.net/spec/iot_sensing/1.1/conf/data-array
+http://www.opengis.net/spec/iot_sensing/1.1/conf/data-array/data-array
+http://www.opengis.net/spec/iot_sensing/1.1/conf/multi-datastream
+http://www.opengis.net/spec/iot_sensing/1.1/conf/multi-datastream/properties
+http://www.opengis.net/spec/iot_sensing/1.1/conf/multi-datastream/relations
+http://www.opengis.net/spec/iot_sensing/1.1/conf/multi-datastream/constraints
+http://www.opengis.net/spec/iot_sensing/1.1/conf/batch-request
+http://www.opengis.net/spec/iot_sensing/1.1/conf/batch-request/batch-request
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/create-entity
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/link-to-existing-entities
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/deep-insert
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/deep-insert-status-code
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/update-entity
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/delete-entity
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/built-in-filter-operations
+http://www.opengis.net/spec/iot_sensing/1.1/conf/request-data/built-in-query-functions
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/historical-location-auto-creation
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/update-entity-put
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-update-delete/update-entity-jsonpatch
+
+For streaming data interface following shall be implemented
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-observations-via-mqtt
+http://www.opengis.net/spec/iot_sensing/1.1/conf/create-observations-via-mqtt/observations-creation
+http://www.opengis.net/spec/iot_sensing/1.1/conf/receive-updates-via-mqtt
+http://www.opengis.net/spec/iot_sensing/1.1/conf/receive-updates-via-mqtt/receive-updates
