@@ -25,10 +25,22 @@ The approach taken is to define core suite of standard elements that can express
 
 Considering all the recognised scenarios, the API suite can contain:
 * fine grained access to observations based on the OGC Sensor Things API, optionally with STA+ extension for the Citizen Science
-* aggregated representation like coverages  of the observations and models outcomes based on the Environmental Data Retrieval API in the CoverageJSON/NetCDF/Zarr formats
+* aggregated representation like coverages  of the observations and models outcomes based on the Coverages and Environmental Data Retrieval API in the CoverageJSON/NetCDF/Zarr formats
 * vector features representation based on OGC API Features that could represent locations, physical installations but also be an alternative observations representation consumable by wider range of client applications
 * catalog based on Records API/STAC with relevant extensions for metadata Description
 * services API based on the OGC API Processes and Application Package
+* direct access to the Cloud Optimised data stored in Zarr
+* OpenDAP interface to NetCDF data
+
+
+| Data Access Protocols | dataset discovery support | extended source information | access method | Semantic support of OIM |
+| --------------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| [SensorThingsAPI](SensorThingsAPI.md) | no general level information | all the fine grained metadata available for sensors, FoI, Thing | OData/HTTP access to granular data, filtering and grouping | OIM LD context/entailment |
+| [OGC API Coverages/WCS](CoveragesAPI.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming and resolution scaling | OIM LD context/entailment |
+| [OGC API EDR](EnvironmentalDataRetrievalAPI.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming | though OIM LD context/entailment |
+| [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | OIM LD context/entailment |
+| [OpenDAP](Tiles.md) | ??? | ??? | ??? | NcML |
+
 
 All the APIs shall follow several requirements for the alignments:
 * be integrated with OIM based on the generic templates.
