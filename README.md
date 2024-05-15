@@ -37,7 +37,7 @@ Considering all the recognised scenarios, the API suite can contain:
 | --------------------- | ----------------- | ----------------- | ----------------- | ----------------- |
 | [SensorThingsAPI](SensorThingsAPI.md) | no general level information | all the fine grained metadata available for sensors, FoI, Thing | OData/HTTP access to granular data, filtering and grouping | OIM LD context/entailment |
 | [OGC API Coverages/WCS](CoveragesAPI.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming and resolution scaling | OIM LD context/entailment |
-| [OGC API EDR](EnvironmentalDataRetrievalAPI.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming | though OIM LD context/entailment |
+| [OGC API EDR](OGC_EDR/README.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming | though OIM LD context/entailment |
 | [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | OIM LD context/entailment |
 | [OpenDAP](Tiles.md) | ??? | ??? | ??? | NcML |
 
