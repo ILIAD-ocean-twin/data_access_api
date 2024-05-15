@@ -4,7 +4,7 @@ Environmental Data Retreival API is one of the mature OGC APIs that are built on
 
 With this API, that can be put in front of various data sources enabling:
 * one mechanism of access regardless of underlying data format and transfer protocol
-* one data model aligned to custom domain (like Marine or MetOcean)
+* one data model aligned to custom domain (like CF convention)
 * metadata discovery service to navigate through the catalog of exposed data collections
 * multi-format support behind one API
 * OpenAPI based specification generated directly from server
