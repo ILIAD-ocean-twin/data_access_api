@@ -97,7 +97,7 @@ So one can reuse generated [JSON-LD context](https://github.com/ILIAD-ocean-twin
 
 ## Reference implementation
 
-Using one of the OGC API Features 
+Using one of the OGC API Features one can deploy API server following original pygeoapi documentation or [Iliad one](https://github.com/ILIAD-ocean-twin/data_access_api/tree/main/examples/OGC_EDR)
 
 Features added to the pygeoapi codebase:
  - custom context support for Items
