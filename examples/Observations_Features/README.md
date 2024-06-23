@@ -95,7 +95,7 @@ So one can reuse generated [JSON-LD context](https://github.com/ILIAD-ocean-twin
     "features":[
 ```
 
-### Reference implementation
+## Reference implementation
 
 Using one of the OGC API Features 
 
@@ -103,39 +103,23 @@ Features added to the pygeoapi codebase:
  - custom context support for Items
  - nexted hasResult in the CSVObsProvider
 
- Example configuration
+In the [example configuration](https://github.com/ILIAD-ocean-twin/data_access_api/blob/master/examples/Observations_Features/example-config-observations.yml) CSV provider has been used for convenient fist steps deployment. For production deployments database backend like Elasticsearch can be considered.
+
+ Example configuration contains:
+ * references to context files
+ * mapping of fields to coordinates and is
+ * list of properties that will be treated as observation results and nested in properties.hasResult
+
  ```
  my-observations-linked:
-        type: collection
-        title: Observations linked
-        description: My cool observations with definitions
-        keywords:
-            - observations
-            - monitoring
+        ...
         linked-data:
             direct-context:
               - https://ogcincubator.github.io/iliad-apis-features/build/annotated/hosted/iliad/api/features/oim-obs/context.jsonld
               - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/47b1aaa3ba6bbf513665993b7bbb8c04b0e162b7/jsonld/oimOceanProfile-context.jsonld
               - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/crossDomain-context.jsonld
               - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/metadata-context.jsonld
-        links:
-            - type: text/csv
-              rel: canonical
-              title: data
-              href: https://github.com/mapserver/mapserver/blob/branch-7-0/msautotest/wxs/data/obs.csv
-              hreflang: en-US
-            - type: text/csv
-              rel: alternate
-              title: data
-              href: https://raw.githubusercontent.com/mapserver/mapserver/branch-7-0/msautotest/wxs/data/obs.csv
-              hreflang: en-US
-        extents:
-            spatial:
-                bbox: [ 34,31,35,32 ]
-                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-            temporal:
-                begin: 2024-01-30T18:24:39Z
-                end: 2024-04-30T08:57:29Z
+        ...
         providers:
             - type: feature
               name: CSVObs
@@ -161,9 +145,9 @@ Features added to the pygeoapi codebase:
                     - distanceWalkedinmeters
  ```
 
-### Further use
+## Further use
 
-Observation as Feature model is one of the potential examples of vector data with full LD support and alignement with Ocean Information Model. Based on this template any custom feature can be represented including monitoring stations, Marine Spatial Planning areas like Protected Areas.
+Observation as Feature model is one of the examples of vector data with full LD support and alignement with Ocean Information Model. Based on this template any custom feature can be represented including monitoring stations, Marine Spatial Planning areas like Protected Areas.
 
 ## Limitations
 
