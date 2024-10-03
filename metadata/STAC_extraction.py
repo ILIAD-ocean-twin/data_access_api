@@ -210,7 +210,8 @@ def create_stac_item(metadata, netcdf_file, output_folder):
             "end_datetime": str(end_datetime)+"Z",
             "created": datetime.utcnow().isoformat() + "Z",
             "updated": datetime.utcnow().isoformat() + "Z"},
-            "rights": "string defining access rights inline or as URL",
+            "license": "optional legal provisions under which this collection is made available. use links where available, preferably from SPDX register",
+            "rights": "optional statement that concerns all rights not addressed by the license such as a copyright statement; string defining access rights inline or as URL",
             "applicableLegislation": "string defining applicable legislation inline or as URL, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
             "convention": "CF-1.6",
             "version": "optional resource behind the record version string",
@@ -226,7 +227,8 @@ def create_stac_item(metadata, netcdf_file, output_folder):
                 }
             ],
             
-            "dqv:hasQualityMeasurement": "optional description of the quality measures used to generate the content, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step"
+            "dqv:hasQualityMeasurement": "optional description of the quality measures used to generate the content, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
+            "dqv:hasQualityMetadata": "optional quality metadata as string or object (with structure TBD)"
         },
         geometry={
             "type": "Polygon",
@@ -288,12 +290,6 @@ def create_stac_item(metadata, netcdf_file, output_folder):
                 type="application/xml",
                 title="optional link to the web service (not raw file) like OGC Web Map Service (WMS) either one enclosure or service is required in Iliad profile",
                 href=f"https://example.com/ows/wms"
-            ),
-            Link(
-                rel="license",
-                type="text/html",
-                title= "optional link to the data descritpion page",
-                href=f"https://example.com/license"
             ),
             Link(
                 rel="license",

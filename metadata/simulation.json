@@ -37,11 +37,10 @@
     "title": "No Title",
     "description": "No Description",
     "datetime": "2023-04-09 01:00:00+00:00",
-    "created": "2024-10-03 10:15:29.188439+00:00",
-    "updated": "2024-10-03 10:15:29.188803+00:00",
+    "created": "2024-10-03 09:52:48.036766+00:00",
+    "updated": "2024-10-03 09:52:48.037114+00:00",
     "start_datetime": "2023-04-09 01:00:00+00:00",
     "end_datetime": "2023-04-12 01:00:00+00:00",
-    "license": "optional legal provisions under which this collection is made available. use links where available, preferably from SPDX register",
     "cube:dimensions": {
       "trajectory": {
         "type": "trajectory",
@@ -178,7 +177,7 @@
         ]
       }
     ],
-    "rights": "optional statement that concerns all rights not addressed by the license such as a copyright statement; string defining access rights inline or as URL",
+    "rights": "string defining access rights inline or as URL",
     "applicableLegislation": "string defining applicable legislation inline or as URL, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
     "convention": "CF-1.6",
     "version": "optional resource behind the record version string",
@@ -193,8 +192,7 @@
         "unit": "https://qudt.org/2.1/vocab/unit/GM-PER-KiloGM"
       }
     ],
-    "dqv:hasQualityMeasurement": "optional description of the quality measures used to generate the content, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
-    "dqv:hasQualityMetadata": "optional quality metadata as string or object (with structure TBD)"
+    "dqv:hasQualityMeasurement": "optional description of the quality measures used to generate the content, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step"
   },
   "id": "simulation",
   "stac_version": "1.1.0",
