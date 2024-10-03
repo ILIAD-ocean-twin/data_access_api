@@ -37,8 +37,8 @@
     "title": "No Title",
     "description": "No Description",
     "datetime": "2023-04-09 01:00:00+00:00",
-    "created": "2024-10-03 09:34:33.229051+00:00",
-    "updated": "2024-10-03 09:34:33.236087+00:00",
+    "created": "2024-10-03 09:52:48.036766+00:00",
+    "updated": "2024-10-03 09:52:48.037114+00:00",
     "start_datetime": "2023-04-09 01:00:00+00:00",
     "end_datetime": "2023-04-12 01:00:00+00:00",
     "cube:dimensions": {
@@ -120,6 +120,63 @@
         ]
       }
     },
+    "contacts": [
+      {
+        "name": "name of the contact, name or organisation is required or both, all the other fields are optiopnal. Roles can be defined on the contact or phones|emails|addresses level",
+        "organization": "name of the organisation, name or organisation is required or both, all the other fields are optional. schema https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml",
+        "identifier": " optional identifier of the contact",
+        "position": "optional position of the contact",
+        "logo": {
+          "href": "https://example.com/logo.png",
+          "rel": "icon",
+          "type": "image/png",
+          "description": "descritpion is not required here just for a not in the example: link shall have rel=icon and type shall be image"
+        },
+        "links": [
+          {
+            "href": "https://woudc.org",
+            "rel": "about",
+            "type": "text/html"
+          }
+        ],
+        "phones": [
+          {
+            "value": "+99123456983123",
+            "role": "contactPoint"
+          }
+        ],
+        "emails": [
+          {
+            "value": "jsmith@example.com",
+            "role": "rightsHolder"
+          }
+        ],
+        "addresses": [
+          {
+            "deliveryPoint": [
+              "optional detailed address"
+            ],
+            "city": "optional city",
+            "administrativeArea": "optional administrativeArea",
+            "postalCode": "optional postalCode",
+            "country": "optional country"
+          }
+        ],
+        "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
+        "roles": [
+          "contactPoint",
+          "rightsHolder",
+          "pubisher",
+          "creator",
+          "distributor",
+          "originator",
+          "principalInvestigator",
+          "processor",
+          "resourceProvider",
+          "u"
+        ]
+      }
+    ],
     "rights": "string defining access rights inline or as URL",
     "applicableLegislation": "string defining applicable legislation inline or as URL, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
     "convention": "CF-1.6",

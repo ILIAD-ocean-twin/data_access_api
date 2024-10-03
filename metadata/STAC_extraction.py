@@ -53,10 +53,20 @@ def extract_netcdf_metadata(netcdf_file,lon='lon',lat='lat', time='time'):
 def _toiso(d):
     return d.values.astype('datetime64[ms]').item().isoformat()
 
+
 def create_contacts_example(ds, ps):
     ps["contacts"] = [
       {
-        "name": "World Ozone and Ultraviolet Radiation Data Centre",
+        "name": "name of the contact, name or organisation is required or both, all the other fields are optiopnal. Roles can be defined on the contact or phones|emails|addresses level",
+        "organization": "name of the organisation, name or organisation is required or both, all the other fields are optional. schema https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml",
+        "identifier": " optional identifier of the contact",
+        "position": "optional position of the contact",
+        "logo": {
+             "href": "https://example.com/logo.png",
+             "rel": "icon",
+             "type": "image/png",
+             "description": "descritpion is not required here just for a not in the example: link shall have rel=icon and type shall be image"
+           },
         "links": [
            {
              "href": "https://woudc.org",
@@ -64,7 +74,9 @@ def create_contacts_example(ds, ps):
              "type": "text/html"
            }
         ],
-        "emails":[{"value": "jsmith@example.com"}],
+        "phones":[{"value": "+99123456983123", "role": "contactPoint"}],
+        "emails":[{"value": "jsmith@example.com", "role": "rightsHolder"}],
+        "addresses":[{"deliveryPoint":["optional detailed address"],"city":"optional city", "administrativeArea":"optional administrativeArea", "postalCode":"optional postalCode", "country":"optional country"}],
         "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
         "roles": [ "contactPoint", "rightsHolder", "pubisher", "creator", "distributor", "originator", "principalInvestigator", "processor", "resourceProvider", "u" ]
       }
@@ -105,6 +117,7 @@ def create_properties(ds):
     create_cube_dimensions(ds, ps)
     create_cube_variables(ds, ps)
     create_themes_properties(ds, ps)
+    create_contacts_example(ds, ps)
     return ps
 
 
