@@ -36,11 +36,15 @@
   "properties": {
     "title": "No Title",
     "description": "No Description",
-    "datetime": "2023-04-09 01:00:00+00:00",
+    "datetime": [
+      "2023-04-09T01:00:00Z"
+    ],
     "created": "2024-10-03 10:22:35.026590+00:00",
-    "updated": "2024-10-03 10:22:35.026949+00:00",
-    "start_datetime": "2023-04-09 01:00:00+00:00",
-    "end_datetime": "2023-04-12 01:00:00+00:00",
+    "updated": [
+      "2024-10-03T10:59:34.887874Z"
+    ],
+    "start_datetime": "2023-04-09T01:00:00Z",
+    "end_datetime": "2023-04-12T01:00:00.000Z",
     "license": "optional legal provisions under which this collection is made available. use links where available, preferably from SPDX register",
     "cube:dimensions": {
       "trajectory": {
@@ -60,6 +64,171 @@
       }
     },
     "cube:variables": {
+      "status": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "moving": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "age_seconds": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "s"
+      },
+      "origin_marker": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "lon": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "degrees_east"
+      },
+      "lat": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "degrees_north"
+      },
+      "z": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m"
+      },
+      "wind_drift_factor": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "%"
+      },
+      "current_drift_factor": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "1"
+      },
+      "terminal_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m/s"
+      },
+      "mass_oil": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "viscosity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m2/s"
+      },
+      "density": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg/m^3"
+      },
+      "bulltime": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "s"
+      },
+      "interfacial_area": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m2"
+      },
+      "mass_dispersed": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "mass_evaporated": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "mass_biodegraded": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "fraction_evaporated": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "%"
+      },
+      "water_fraction": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "%"
+      },
+      "oil_film_thickness": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m"
+      },
       "diameter": {
         "dimensions": [
           "trajectory",
@@ -68,7 +237,133 @@
         "type": "data",
         "unit": "m"
       },
+      "x_sea_water_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "y_sea_water_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "x_wind": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "y_wind": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "upward_sea_water_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_significant_height": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_stokes_drift_x_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_stokes_drift_y_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_period_at_variance_spectral_density_maximum": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_mean_period_from_variance_spectral_density_second_frequency_moment": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_ice_area_fraction": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_ice_x_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_ice_y_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_water_temperature": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
       "sea_water_salinity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_floor_depth_below_sea_level": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "ocean_vertical_diffusivity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "land_binary_mask": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "ocean_mixed_layer_thickness": {
         "dimensions": [
           "trajectory",
           "time"
@@ -287,9 +582,7 @@
     ],
     "resolution": "P1D"
   },
-  "crs": [
-    "https://www.opengis.net/def/crs/OGC/1.3/CRS84"
-  ],
+  "crs": "EPSG:4326",
   "conformsTo": [
     "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat-stac-eo/",
     "https://ogcincubator.github.io/iliad-apis-features/bblock/ogc.hosted.iliad.api.stac_record",

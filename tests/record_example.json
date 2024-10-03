@@ -42,7 +42,8 @@
     "start_datetime": "2023-04-09 01:00:00+00:00",
     "end_datetime": "2023-04-12 01:00:00+00:00",
     "license": "optional legal provisions under which this collection is made available. use links where available, preferably from SPDX register",
-    "cube:dimensions": {
+    "cube:dimensions": { 
+      "_comment": "dimensions and variables describe the data coverage, it is ",
       "trajectory": {
         "type": "trajectory",
         "extent": [
