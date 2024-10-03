@@ -193,15 +193,6 @@ def create_stac_item(metadata, netcdf_file, output_folder):
                          "https://stac-extensions.github.io/contacts/v0.1.1/schema.json",
                          "https://stac-extensions.github.io/version/v1.2.0/schema.json",
                          "https://stac-extensions.github.io/processing/v1.2.0/schema.json"],
-        conformsTo=["https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat-stac-eo/",
-                    "https://ogcincubator.github.io/iliad-apis-features/bblock/ogc.hosted.iliad.api.stac_record",
-                    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
-                    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
-                    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
-                    "https://stac-extensions.github.io/cf/v0.2.0/schema.json",
-                    "https://stac-extensions.github.io/contacts/v0.1.1/schema.json",
-                    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
-                    "https://stac-extensions.github.io/processing/v1.2.0/schema.json"],
         properties={**metadata["properties"], **{
             "title": metadata["title"],
             "description": metadata["description"],
@@ -334,7 +325,16 @@ def main(netcdf_file, output_folder):
     stac_dict['time']= {"interval": [stac_item.properties.start_datetime,
                                       stac_item.properties.end_datetime],
                         "resolution": "P1D"}
-    stac_dict['crs'] = "https://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    stac_dict['crs'] = "https://www.opengis.net/def/crs/OGC/1.3/CRS84",
+    stac_dict['conformsTo'] = ["https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat-stac-eo/",
+                                "https://ogcincubator.github.io/iliad-apis-features/bblock/ogc.hosted.iliad.api.stac_record",
+                                "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
+                                "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
+                                "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+                                "https://stac-extensions.github.io/cf/v0.2.0/schema.json",
+                                "https://stac-extensions.github.io/contacts/v0.1.1/schema.json",
+                                "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+                                "https://stac-extensions.github.io/processing/v1.2.0/schema.json"]
 
     # Save the STAC item to a JSON file
     output_file = os.path.join(output_folder, f"{stac_item.id}.json")
