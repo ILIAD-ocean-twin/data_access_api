@@ -153,3 +153,8 @@ https://www.ncei.noaa.gov/netcdf-templates
 ### OpenDAP
 
 ### ERRDAP APIs
+
+## Acknowledgements
+
+The work has been co-funded by the European Union, Switzerland and the United Kingdom under the Horizon Europe:
+* [Iliad project](https://www.ogc.org/initiatives/iliad/) (GA 101037643)
