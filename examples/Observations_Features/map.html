@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0d04bb92ae2a34a3f36b5a5a570674e7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0d04bb92ae2a34a3f36b5a5a570674e7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0d04bb92ae2a34a3f36b5a5a570674e7 = L.map(
+                "map_0d04bb92ae2a34a3f36b5a5a570674e7",
+                {
+                    center: [31.80691, 34.634776],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 8,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ddd0eded8ff118a49f5e9ef392d33451 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_ddd0eded8ff118a49f5e9ef392d33451.addTo(map_0d04bb92ae2a34a3f36b5a5a570674e7);
+        
+    
+
+        function geo_json_4f877108b395a379c21678ac60bf93f2_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4f877108b395a379c21678ac60bf93f2 = L.geoJson(null, {
+                onEachFeature: geo_json_4f877108b395a379c21678ac60bf93f2_onEachFeature,
+            
+        });
+
+        function geo_json_4f877108b395a379c21678ac60bf93f2_add (data) {
+            geo_json_4f877108b395a379c21678ac60bf93f2
+                .addData(data);
+        }
+            geo_json_4f877108b395a379c21678ac60bf93f2_add({"features": [{"geometry": {"coordinates": [34.634776, 31.80691], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast140725.37530-60Rhopilema nomadica", "properties": {"Distance_from_coast": "200-1000", "Location_20_Zones_ID": 18, "MachineObservation": "-", "Quantity_Reported": 10, "Stinging_Water": "Unspecified", "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 1000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": 31.80691, "decimalLongitude_ori": 34.634776, "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T09:00:00", "eventDate_ori": "01/07/2011 9:00", "eventType": 0, "goldUser": 1, "obsID": 1, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Some", "organismQuantityType": "Individuals", "quantificationMethod": "Other", "recordedBy": 527, "sampleSizeUnit": "cm", "sampleSizeValue": "30-60", "scientificName": "Rhopilema nomadica", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=232032", "strandedJellyfish": 1, "time": "9:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.634776, 31.80691], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast140725.37511232Rhizostoma pulmo", "properties": {"Distance_from_coast": "200-1000", "Location_20_Zones_ID": 18, "MachineObservation": "-", "Quantity_Reported": 10, "Stinging_Water": "Unspecified", "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 1000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": 31.80691, "decimalLongitude_ori": 34.634776, "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T09:00:00", "eventDate_ori": "01/07/2011 9:00", "eventType": 0, "goldUser": 1, "obsID": 1, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Some", "organismQuantityType": "Individuals", "quantificationMethod": "Other", "recordedBy": 527, "sampleSizeUnit": "cm", "sampleSizeValue": "10-30", "scientificName": "Rhizostoma pulmo", "scientificNameID": "http://marinespecies.org/aphia.php?p=taxdetails\u0026id=135299", "strandedJellyfish": 1, "time": "9:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.634776, 31.80691], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast140725.37511232Phyllorhiza punctata", "properties": {"Distance_from_coast": "200-1000", "Location_20_Zones_ID": 18, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": "Unspecified", "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 1000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": 31.80691, "decimalLongitude_ori": 34.634776, "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T09:00:00", "eventDate_ori": "01/07/2011 9:00", "eventType": 0, "goldUser": 1, "obsID": 1, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Some", "organismQuantityType": "Individuals", "quantificationMethod": "Other", "recordedBy": 527, "sampleSizeUnit": "cm", "sampleSizeValue": "10-30", "scientificName": "Phyllorhiza punctata", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=135298", "strandedJellyfish": 1, "time": "9:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.88873, 32.492007], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast240725.37511232Rhopilema nomadica", "properties": {"Distance_from_coast": "200-1000", "Location_20_Zones_ID": 9, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": 1, "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 1000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": 32.492007, "decimalLongitude_ori": 34.88873, "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T09:00:00", "eventDate_ori": "01/07/2011 9:00", "eventType": 0, "goldUser": 1, "obsID": 2, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Swarm", "organismQuantityType": "Individuals", "quantificationMethod": "Yachting", "recordedBy": 2039, "sampleSizeUnit": "cm", "sampleSizeValue": "10-30", "scientificName": "Rhopilema nomadica", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=232032", "strandedJellyfish": 1, "time": "9:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.88873, 32.492007], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast240725.37511232Rhizostoma pulmo", "properties": {"Distance_from_coast": "200-1000", "Location_20_Zones_ID": 9, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": 1, "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 1000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": 32.492007, "decimalLongitude_ori": 34.88873, "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T09:00:00", "eventDate_ori": "01/07/2011 9:00", "eventType": 0, "goldUser": 1, "obsID": 2, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Swarm", "organismQuantityType": "Individuals", "quantificationMethod": "Yachting", "recordedBy": 2039, "sampleSizeUnit": "cm", "sampleSizeValue": "10-30", "scientificName": "Rhizostoma pulmo", "scientificNameID": "http://marinespecies.org/aphia.php?p=taxdetails\u0026id=135299", "strandedJellyfish": 1, "time": "9:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.790955, 32.355448], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast340725.416666666730-60Rhopilema nomadica", "properties": {"Distance_from_coast": "1000-10000", "Location_20_Zones_ID": 10, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": "Unspecified", "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 10000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": "32,355,448", "decimalLongitude_ori": "34,790,955", "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T10:00:00", "eventDate_ori": "01/07/2011 10:00", "eventType": 0, "goldUser": 1, "obsID": 3, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Swarm", "organismQuantityType": "Individuals", "quantificationMethod": "Fishing", "recordedBy": 361, "sampleSizeUnit": "cm", "sampleSizeValue": "30-60", "scientificName": "Rhopilema nomadica", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=232032", "strandedJellyfish": 1, "time": "10:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.790955, 32.355448], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast340725.41666666670-10Rhizostoma pulmo", "properties": {"Distance_from_coast": "1000-10000", "Location_20_Zones_ID": 10, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": "Unspecified", "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 10000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": "32,355,448", "decimalLongitude_ori": "34,790,955", "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T10:00:00", "eventDate_ori": "01/07/2011 10:00", "eventType": 0, "goldUser": 1, "obsID": 3, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Swarm", "organismQuantityType": "Individuals", "quantificationMethod": "Fishing", "recordedBy": 361, "sampleSizeUnit": "cm", "sampleSizeValue": "0-10", "scientificName": "Rhizostoma pulmo", "scientificNameID": "http://marinespecies.org/aphia.php?p=taxdetails\u0026id=135299", "strandedJellyfish": 1, "time": "10:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.790955, 32.355448], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast340725.41666666670-10Phyllorhiza punctata", "properties": {"Distance_from_coast": "1000-10000", "Location_20_Zones_ID": 10, "MachineObservation": "-", "Quantity_Reported": 10, "Stinging_Water": "Unspecified", "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 10000, "date": "01/07/2011", "dateFix": "07/01/2011", "decimalLatitude_ori": "32,355,448", "decimalLongitude_ori": "34,790,955", "distanceWalkedinmeters": "-", "eventDate": "2011-07-01T10:00:00", "eventDate_ori": "01/07/2011 10:00", "eventType": 0, "goldUser": 1, "obsID": 3, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Some", "organismQuantityType": "Individuals", "quantificationMethod": "Fishing", "recordedBy": 361, "sampleSizeUnit": "cm", "sampleSizeValue": "0-10", "scientificName": "Phyllorhiza punctata", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=135298", "strandedJellyfish": 1, "time": "10:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.94339, 32.849519], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast440726.458333333330-60Rhopilema nomadica", "properties": {"Distance_from_coast": "200-1000", "Location_20_Zones_ID": 2, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": 1, "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 10000, "date": "02/07/2011", "dateFix": "07/02/2011", "decimalLatitude_ori": "32,849,519", "decimalLongitude_ori": "3,494,339", "distanceWalkedinmeters": "-", "eventDate": "2011-07-02T11:00:00", "eventDate_ori": "02/07/2011 11:00", "eventType": 0, "goldUser": 0, "obsID": 4, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Swarm", "organismQuantityType": "Individuals", "quantificationMethod": "Other", "recordedBy": 1826, "sampleSizeUnit": "cm", "sampleSizeValue": "30-60", "scientificName": "Rhopilema nomadica", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=232032", "strandedJellyfish": 0, "time": "11:00"}, "type": "Feature"}, {"geometry": {"coordinates": [34.568481, 31.809739], "type": "Point"}, "id": "Jellyfish_in_Israeli_Mediterranean_coast540727.291666666730-60Rhopilema nomadica", "properties": {"Distance_from_coast": "0-200", "Location_20_Zones_ID": 18, "MachineObservation": "-", "Quantity_Reported": 50, "Stinging_Water": 1, "basisOfRecord": "HumanObservation", "coordinateUncertaintyInMeters": 10000, "date": "03/07/2011", "dateFix": "07/03/2011", "decimalLatitude_ori": "31,809,739", "decimalLongitude_ori": "34,568,481", "distanceWalkedinmeters": "-", "eventDate": "2011-07-03T07:00:00", "eventDate_ori": "03/07/2011 7:00", "eventType": 0, "goldUser": 0, "obsID": 5, "occurrence": "Jellyfish_in_Israeli_Mediterranean_coast", "occurrenceStatus": "present", "organismQuantity": "Swarm", "organismQuantityType": "Individuals", "quantificationMethod": "Other", "recordedBy": 4101, "sampleSizeUnit": "cm", "sampleSizeValue": "30-60", "scientificName": "Rhopilema nomadica", "scientificNameID": "https://marinespecies.org/aphia.php?p=taxdetails\u0026id=232032", "strandedJellyfish": 1, "time": "7:00"}, "type": "Feature"}], "links": [{"href": "http://localhost:5002/collections/my-observations-schema.org/items?f=json", "rel": "self", "title": "This document as GeoJSON", "type": "application/geo+json"}, {"href": "http://localhost:5002/collections/my-observations-schema.org/items?f=jsonld", "rel": "alternate", "title": "This document as RDF (JSON-LD)", "type": "application/ld+json"}, {"href": "http://localhost:5002/collections/my-observations-schema.org/items?f=html", "rel": "alternate", "title": "This document as HTML", "type": "text/html"}, {"href": "http://localhost:5002/collections/my-observations-schema.org/items?offset=10", "rel": "next", "title": "Items (next)", "type": "application/geo+json"}, {"href": "http://localhost:5002/collections/my-observations-schema.org", "rel": "collection", "title": "Observations", "type": "application/json"}], "numberMatched": 27919, "numberReturned": 10, "timeStamp": "2024-11-04T11:32:18.289289Z", "type": "FeatureCollection"});
+        geo_json_4f877108b395a379c21678ac60bf93f2.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+            geo_json_4f877108b395a379c21678ac60bf93f2.addTo(map_0d04bb92ae2a34a3f36b5a5a570674e7);
+        
+    
+            var layer_control_936408e4df1d4618b839a6871b0b8718_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_ddd0eded8ff118a49f5e9ef392d33451,
+                },
+                overlays :  {
+                    "geojson" : geo_json_4f877108b395a379c21678ac60bf93f2,
+                },
+            };
+            let layer_control_936408e4df1d4618b839a6871b0b8718 = L.control.layers(
+                layer_control_936408e4df1d4618b839a6871b0b8718_layers.base_layers,
+                layer_control_936408e4df1d4618b839a6871b0b8718_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_0d04bb92ae2a34a3f36b5a5a570674e7);
+
+        
+</script>
+</html>
