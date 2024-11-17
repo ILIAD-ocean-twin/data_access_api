@@ -201,3 +201,9 @@ beyond that, DAP provide specific API for NetCDF like data both in request-respo
 DAP services uses NetCDF DDS for metadata discovery and variables in domain, which shall be aligned with the information model. Ususally it is done though CF alignemnt.
 
 Beyond vanila DAP, ERDDAP proposes their own API which is a combination of catalog (like Records and opensearch) and trimming and rescaling (like WCS/Coverages/EDR). This is area of potential alignment of the implementations which could be done after OGC API Coverages publication.
+
+# Acknowledgements
+
+The work has been co-funded by the European Union, Switzerland and the United Kingdom under the Horizon Europe:
+* [Iliad project](https://www.ogc.org/initiatives/iliad/) (GA 101037643)
+
