@@ -39,12 +39,34 @@ Considering all the recognised scenarios, the API suite can contain:
 | [OGC API Coverages/WCS](CoveragesAPI.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming and resolution scaling | OIM LD context/entailment |
 | [OGC API EDR](OGC_EDR/README.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming | though OIM LD context/entailment |
 | [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | OIM LD context/entailment |
-| [OpenDAP](Tiles.md) | ??? | ??? | ??? | NcML |
+| [CF-storages](Archives.md) | in-file DDS metadata | file and variable level key-values | storage specific | various |
+| [OpenDAP](https://www.opendap.org/) | DDS based | NetCDF-like | HTTP | NcML |
+
+### Metadata role in data access
+
+Metadata describing data assets is in various level integrated in the APIs s briefly mentioned in the table above.
+Most modern Web API like SensorThingAPI, Features API include generic layer metadata () in the standard 
 
 
-All the APIs shall follow several requirements for the alignments:
-* be integrated with OIM based on the generic templates.
-* follow Geospatial Data on the Web Best Practices, in particular: unique URIs that are refereable between various data Sources
+### Spatial APIs and spatial cloud native storages
+
+Recent review of the storage formats in the spirit of the cloud nativeness has consolidated as several data formats (like Zarr, Cloud Optimised Geotiff, GeoParquet, NetCDF+Kerchunk) that enable random access to data [chunks](https://en.wikipedia.org/wiki/Chunk_(information)). These formats can be indexed and accessed directly without dedicated application level server. It can be implemented as "serverless" data access which has several pros and cons.
+
+* potentially lower cost of setup and maintenance - e.g. put data in the web bucket.
+* trade of server side preprocessing for simplicity
+* server side multiresolution is provided on cost of storage instead of computing
+* data push driven data management vs information driven - on default, data entities are associated with provision pipelines not client applications
+* not designed for web and other light applications - visualisation, scaling
+* trade of caching efficiency vs random access
+* easy storage driven access management and control, not obvious are 
+
+## Iliad specificity
+
+Iliad efforts in the APIs development are tightly aligned to the standardisation processes, so the intention is not to design totaly new technical stack, but more to contribute to the existing and emerging standards with the experiences taken from the project and support standards APIs development where they does not exist.
+
+However, with all the web APIs shall follow several requirements for the alignments:
+* be integrated with OIM based on the generic templates
+* follow [Spatial Data on the Web Best Practices](https://www.w3.org/TR/sdw-bp/), in particular: unique URIs that are refereable between various data sources
 
 ## SensorThings APIs
 
@@ -125,36 +147,63 @@ If multiple endpoints needs to be combined, reasonable approach is to organise t
 ```
 <sub> Example APIs suite </sub>
 
-### Iliad extensions
 
 
+# Relation to the other standards, APIs and data formats
 
-## Relation to the other APIs and data formats
+### ISO TC211 19* standards
+
+OGC standards are well aligned to the ISO TC211 standards suite and largely implement standards like 19115 metadata model. in some cases, OGC standards are endorsed as ISO (OGC Features API) and sometimes they are jointly developed (Observation & Measurements used by the STA data model).
+
+### DCAT 
+
+Iliad profiles of the metadata documented in the Iliad Building Blocks register refers to the DCAT ontology though OIM definitions or directly. It is part of the canonical information model for dataset description.
 
 ### Zarr
 
-Zarr storage is getting popularity for the environmental data. It is inspired by the NetCDF and HDF formats providing access to multidimentional data adding chunking mechanism that enables access to selected chunks though HTPP range request. As legacy formats, it is not limited to geospatial information, while the profiles are expected to follow Climate and Forecast conventions and similar approach to the NCEI templates where relevant. Integration with the API includes:
-* access to Zarr files through link from the catalog, which can be
+Zarr storage is getting popularity for the environmental data. It is inspired by the NetCDF and HDF formats providing access to multidimentional data adding chunking mechanism that enables access to selected chunks though HTPP range request. As legacy formats, it is not limited to geospatial information, while the profiles are expected to follow Climate and Forecast conventions and similar approach to the NCEI templates where relevant.
+
+
+Integration with the API includes:
+* access to Zarr files through link from the catalog
 * access to the groups of the Zarr file though API in the harmonised way in the same way CoverageJSON, NetCDF and other formats can be requested with trimming relevant for the specific API implementation
-* semantic harmonisation through alignment to the ACDD and CF conventions
+* semantic harmonisation through alignment to the ACDD, CF conventions and OIM
+
 
 ### SeaDataNet
 
-SeaDataNet mapping will be defined in the /metadata.
+TBD but SeaDataNet is a combination of the ISO19115 profile for metadata, CF and own encodings for tabular data, so the overlap is in the abovementioned standards
 
-### Spatio Temporal Asset Catalogue
+### Spatio Temporal Asset Catalogue (STAC), Catalog Web Service (CSW) and Records API
+
+With the recently published OGC API Records, that is a superset of STAC (STAC is de-facto profile of Records), they became of interest of Iliad as potenially including all the metadata.
 
 Iliad Service layer can generate STAC files. They are not going to be directly integrated in the APIs, while some metadata can be passed to the data catalog.
 
-### NCEI NetCDF
+### CF convention and NCEI NetCDF
 
+[CF convention](https://cfconventions.org/conventions.html) defines profiles of the NetCDF format guiding how to use them for geospatial data (based on the climate and foreasts use cases). For example it define how to use dimensions, variables and attributes for geospatial data and what is relation between them (e.g. interpolation of measurement in variable and metadata in attributes).
+
+NetCDF NCEI templates are NetCDF profiles aligned with the CF convention for number of use cases like time series, grided data, trajectories etc.
 https://www.ncei.noaa.gov/netcdf-templates
 
-### OpenDAP
+Both CF conventions and NCEI templates are used in the Iliad pilots to limited extent.
+Iliad proposes new validation mechanisms for the native version of the CF representation in Zarr format. There are several implementations of the CF validators for NetCDF and Zarr data maintained, but:
 
-### ERRDAP APIs
+* implementations of both direct file clients and web services has hard requirements where CF recommends only using units, standard names
+* GeoZarr standard is coming with some metadata schemas that will allow for generic tools based validation.
 
-## Acknowledgements
+### *DAP services
+
+DAP services are user in several Iliad pilots using open implementations (THREDDS/ERDDAP).
+The same implementations are used by CMEMS, EMODNet and NOAA. They expose selected OGC Web Services (WCS, WMS) already.
+beyond that, DAP provide specific API for NetCDF like data both in request-response and streaming which is used out of the box in Iliad and is not part of considerations in this task.
+DAP services uses NetCDF DDS for metadata discovery and variables in domain, which shall be aligned with the information model. Ususally it is done though CF alignemnt.
+
+Beyond vanila DAP, ERDDAP proposes their own API which is a combination of catalog (like Records and opensearch) and trimming and rescaling (like WCS/Coverages/EDR). This is area of potential alignment of the implementations which could be done after OGC API Coverages publication.
+
+# Acknowledgements
 
 The work has been co-funded by the European Union, Switzerland and the United Kingdom under the Horizon Europe:
 * [Iliad project](https://www.ogc.org/initiatives/iliad/) (GA 101037643)
+
