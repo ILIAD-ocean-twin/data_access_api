@@ -41,6 +41,7 @@ Considering all the recognised scenarios, the API suite can contain:
 | [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | OIM LD context/entailment |
 | [CF-storages](Archives.md) | in-file DDS metadata | file and variable level key-values | storage specific | various |
 | [OpenDAP](https://www.opendap.org/) | DDS based | NetCDF-like | HTTP | NcML |
+| Geospatial User Feedback | it is metadata enrichment protocol | additional field for lineage steps extent catalog information | OpenAPI/HTTP, access to feedback items and collections | potential, could base on the OAPI Records and ISO19115 after review |
 
 ### Metadata role in data access
 
