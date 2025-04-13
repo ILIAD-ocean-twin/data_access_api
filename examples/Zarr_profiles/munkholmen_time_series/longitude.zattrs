@@ -1,0 +1,64 @@
+{
+    "@context": ["http://vocab.nerc.ac.uk/collection/P01/current/",
+    "http://vocab.nerc.ac.uk/collection/P31/",
+    {
+        "_ARRAY_DIMENSIONS": {
+            "@id": "http://vocab.nerc.ac.uk/collection/P31/current/dimensions",
+            "@type": "@id"
+        },
+        "ancillary_variables": {
+            "@id": "http://vocab.nerc.ac.uk/collection/P31/current/ancillary_variables",
+            "@type": "@id"
+        },
+        "axis": {
+            "@id": "http://vocab.nerc.ac.uk/collection/P31/current/axis/",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "grid_mapping": {
+            "@id": "http://vocab.nerc.ac.uk/collection/P31/current/grid_mapping/",
+            "@type": "@id"
+        },
+        "long_name": {
+            "@id": "http://vocab.nerc.ac.uk/collection/P31/current/long_name/",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "sdn_parameter_name": {
+
+            "@id": "http://example.org/sdnParameterName",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "sdn_parameter_urn": {
+            "@id": "http://vocab.nerc.ac.uk/collection/P01/current/",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "sdn_uom_name": {
+            "@id": "http://example.org/sdnUomName",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "sdn_uom_urn": {
+            "@id": "http://example.org/sdnUomUrn",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "standard_name": {
+            "@id": "http://example.org/standardName",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "units": {
+            "@id": "http://example.org/units",
+            "@type": "http://www.w3.org/2001/XMLSchema#string"
+        }
+    }],
+    "_ARRAY_DIMENSIONS": [
+        "INSTANCE"
+    ],
+    "ancillary_variables": "POSITION_SEADATANET_QC",
+    "axis": "X",
+    "grid_mapping": "crs",
+    "long_name": "Longitude",
+    "sdn_parameter_name": "Longitude east",
+    "sdn_parameter_urn": "SDN:P01::ALONZZ01",
+    "sdn_uom_name": "Degrees east",
+    "sdn_uom_urn": "SDN:P06::DEGE",
+    "standard_name": "longitude",
+    "units": "degrees_east"
+}
