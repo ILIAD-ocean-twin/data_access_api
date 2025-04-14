@@ -1,0 +1,196 @@
+# =================================================================
+#
+# Authors: Tom Kralidis <tomkralidis@gmail.com>
+#
+# Copyright (c) 2020 Tom Kralidis
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use,
+# copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#
+# =================================================================
+
+server:
+    bind:
+        host: 0.0.0.0
+        port: 5003
+    url: http://localhost:5003
+    mimetype: application/json; charset=UTF-8
+    encoding: utf-8
+    gzip: false
+    languages:
+        # First language is the default language
+        - en-US
+        - fr-CA
+    # cors: true
+    pretty_print: true
+    limit: 10
+    # templates:
+      # path: /path/to/Jinja2/templates
+      # static: /path/to/static/folder # css/js/img
+    map:
+        url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+#    manager:
+#        name: TinyDB
+#        connection: /tmp/pygeoapi-process-manager.db
+#        output_dir: /tmp/
+    # ogc_schemas_location: /opt/schemas.opengis.net
+
+logging:
+    level: ERROR
+    #logfile: /tmp/pygeoapi.log
+metadata:
+    identification:
+        title:
+            en: pygeoapi default instance
+            fr: instance par défaut de pygeoapi
+        description:
+            en: pygeoapi provides an API to geospatial data
+            fr: pygeoapi fournit une API aux données géospatiales
+        keywords:
+            en:
+                - geospatial
+                - data
+                - api
+            fr:
+                - géospatiale
+                - données
+                - api
+        keywords_type: theme
+        terms_of_service: https://creativecommons.org/licenses/by/4.0/
+        url: https://example.org
+    license:
+        name: CC-BY 4.0 license
+        url: https://creativecommons.org/licenses/by/4.0/
+    provider:
+        name: Organization Name
+        url: https://pygeoapi.io
+    contact:
+        name: Lastname, Firstname
+        position: Position Title
+        address: Mailing Address
+        city: City
+        stateorprovince: Administrative Area
+        postalcode: Zip or Postal Code
+        country: Country
+        phone: +xx-xxx-xxx-xxxx
+        fax: +xx-xxx-xxx-xxxx
+        email: you@example.org
+        url: Contact URL
+        hours: Mo-Fr 08:00-17:00
+        instructions: During hours of service. Off on weekends.
+        role: pointOfContact
+
+resources:
+    TilesOnWMTS:
+        type: collection
+        title: GLOBAL_ANALYSISFORECAST_PHY_001_024
+        description: GLOBAL_ANALYSISFORECAST_PHY_001_024
+        keywords:
+            - tiles
+            - wmts wrapper
+            - Global Ocean Physics Analysis and Forecast
+        links:
+            - type: image/png
+              rel: source
+              title: data
+              href: https://wmts.marine.copernicus.eu/teroWmts/GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-cur_anfc_0.083deg_PT6H-i_202211
+              hreflang: en-US
+        extents:
+            spatial:
+                bbox: [ -180,-90,180,90 ]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 2000-10-30T18:24:39Z
+                end: 2007-10-30T08:57:29Z
+        providers:
+            - type: tile
+              name: WMTSFacade
+              data: https://wmts.marine.copernicus.eu/teroWmts
+              format:
+                name: png  # png or jpeg
+                mimetype: image/png
+              options:
+                wmts_layer: GLOBAL_ANALYSISFORECAST_PHY_001_024/cmems_mod_glo_phy-cur_anfc_0.083deg_P1D-m_202406/uo # the layer name of the wmts
+                wmts_tile_matrix_set: EPSG:3857@3x  # the name of the tile matrix set of the wmts.
+                scheme: WebMercatorQuad  # the aligning scheme in pygeoapi.
+                zoom:
+                  min: 0
+                  max: 20
+    MapOnWMS:
+      type: collection
+      title: AVHRR Pathfinder Version 5.3 L3-Collated (L3C) SST, Global, 0.0417°, 1981-present, Daytime (1 Day Composite) - dt_analysis
+      description: Advanced Very High Resolution Radiometer (AVHRR) Pathfinder Version 5.3 L3-Collated (L3C) sea surface temperature. This netCDF-4 file contains sea surface temperature (SST) data produced as part of the AVHRR Pathfinder SST Project. These data were created using Version 5.3 of the Pathfinder algorithm and the file is nearly but not completely compliant with the Global High-Resolution Sea Surface Temperature (GHRSST) Data Specifications V2.0 (GDS2). The sses_bias and sses_standard_deviation variables are empty. Full compliance with GDS2 specifications will be achieved in the future Pathfinder Version 6. These data were created by the NOAA National Centers for Environmental Information (NCEI).\n\ncdm_data_type = Grid\nVARIABLES (all of which use the dimensions [time][latitude][longitude]):\nsea_surface_temperature (NOAA Climate Data Record of sea surface skin temperature, degree_C)\ndt_analysis (deviation from last SST analysis, degree_C)\nwind_speed (10m wind speed, m s-1)\nsea_ice_fraction (%)\nquality_level (quality level of SST pixel, 1)\npathfinder_quality_level (Pathfinder SST quality flag, 1)\nl2p_flags (1)\n
+      keywords:
+          - high-resolution
+          - wms wrapper
+          - pathfinder
+      links:
+          - type: text/html
+            rel: source
+            title: data source
+            href: https://coastwatch.pfeg.noaa.gov/erddap/info/nceiPH53sstd1day/index.htmlTable
+            hreflang: en-US
+      extents:
+          spatial:
+              bbox: [ -180,-90,180,90 ]
+              crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+          temporal:
+              begin: 1981-01-01T00:00:00Z
+              end: 2024-05-30T08:57:29Z
+      providers:
+        - type: map
+          name: WMSFacade
+          data: https://coastwatch.pfeg.noaa.gov/erddap/wms/nceiPH53sstd1day/request
+          options:
+            layer: nceiPH53sstd1day:dt_analysis
+          format:
+            name: png
+            mimetype: image/png
+    TerrasignaMapOnWMS:
+      type: collection
+      title: Iliad terrasigna pilot WMS proxy with semantic alignment to the OIM
+      description: experimental setup with pygeoapi
+      keywords:
+          - water 
+      links:
+          - type: text/html
+            rel: source
+            title: data source
+            href: https://iliad.terrasigna.io/geoportal.html
+            hreflang: en-US
+      extents:
+          spatial:
+              bbox: [ -180,-90,180,90 ]
+              crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+          temporal:
+              begin: 1981-01-01T00:00:00Z
+              end: 2024-05-30T08:57:29Z
+      providers:
+        - type: map
+          name: WMSFacade
+          data: https://ddd.terrasigna.com/geoserver-skyfish/skyfish/wms
+          options:
+            layer: skyfish:sst_BS_L4_010_006
+          format:
+            name: png
+            mimetype: image/png
+
