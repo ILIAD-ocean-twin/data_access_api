@@ -1,6 +1,6 @@
 # Iliad Data Access API
 
-Iliad Data Access API is based on the OGC EDR API, that is designed to access MetOcean data through convenient API that supports coverage and vector data, Iliad profile will be defined. The profile consist of the schema profile, sample configurations of the reference implementations and persistent playground hosted.
+Iliad Data Access API is based on the OGC API suite, that is designed to share and access various kinds of the spatio-temporal data through convenient API that supports coverage and vector data, Iliad profile will be defined. The profile consist of the schema profiles, sample configurations of the reference implementations and persistent playground hosted.
 
 Federated architecture of the Digital Twin can require several types of the interfaces:
 * data and services discovery: allows to browse and filter resources useful for the twin or being its products and navigate to access services; it is usually realised by the interfaces allowing for metadata browsing, that is realised by the catalogue services (T4.1 and T4.3). To ensure harmonised twin use, it is important to align metadata on the catalogue and access levels.
