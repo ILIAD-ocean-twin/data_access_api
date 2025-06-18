@@ -10,6 +10,30 @@ Federated architecture of the Digital Twin can require several types of the inte
 
 This repository focuses on the data access APIs that is not covered by other tasks but shall be semantically integrated with these. At the same time, data models and querying shall be adoptable to the various protocols like event streaming and catalogs.
 
+# quick start
+
+Clone this repostory and the pygeapi Iliad fork
+
+```
+clone https://github.com/pzaborowski/pygeoapi.git
+clone https://github.com/ILIAD-ocean-twin/data_access_api.git
+```
+
+Set the environment variable paths in the data_access_api/examples/start_demo or environment and uncomment:
+
+```
+#export Iliad_api_repo=[path to the data_access_api repository]
+#export Iliad_pygeoapi_repo=[path to the pygeoapi repository]
+```
+
+run the data_access_api/examples/start_demo
+
+```
+chmod +x data_access_api/examples/start_demo
+./start_demo
+```
+
+
 ## Groundwork
 
 Based on the discussions identified ILIAD data includes various types:

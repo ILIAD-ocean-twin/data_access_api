@@ -1,0 +1,131 @@
+
+    PLE_predictions_2024-edr:
+        type: collection
+        title: PLE_predictions test with NortSea from ILVO
+        description: basic EDR API, query data in JSON/NetCDF/Zarr
+        keywords:
+            - edr
+            - northsea
+        extents:
+            spatial:
+                bbox: [-15.0,61.289951973410744,9.963,46.00029874658926]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/nsea-edr
+              title: base url
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/PLE_predictions_2024-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18&f=json
+              title: example json query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/PLE_predictions_2024-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18
+              title: example html query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+        providers:
+            - type: edr
+              name: xarray-edr
+              data: "[data path]/NSea/PLE_predictions_2024-04-18.nc"
+             # optionally specify x/y/time fields, else provider will attempt
+             # to derive automagically
+              x_field: longitude
+              y_field: latitude
+              time_field: time
+              time_api_label: t
+              format:
+                name: netcdf
+                mimetype: application/x-netcdf
+    nsea-all-edr:
+        type: collection
+        title: SOL predictions demo with NortSea from ILVO (NetCDF source)
+        description: basic EDR API, query data in JSON/NetCDF/Zarr
+        keywords:
+            - edr
+            - northsea
+        extents:
+            spatial:
+                bbox: [-15.0,61.289951973410744,9.963,46.00029874658926]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/nsea-all-edr
+              title: base url
+            - type: application/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/nsea-all-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18&f=json
+              title: example json query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+            - type: application/json-ld
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/nsea-all-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18&f=jsonld
+              title: example Zarr query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+            - type: application/x-zarr
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/nsea-all-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18&f=zarr
+              title: example Zarr query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+            - type: application/x-netcdf
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/nsea-all-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18&f=NetCDF
+              title: example Zarr query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/nsea-all-edr/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-18
+              title: example html query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-18
+        providers:
+            - type: edr
+              name: xarray-edr
+              data: "[data path]/NSea/SOL_predictions_2024-04-18.nc"
+             # optionally specify x/y/time fields, else provider will attempt
+             # to derive automagically
+              x_field: longitude
+              y_field: latitude
+              time_field: time
+              time_api_label: t
+              format:
+                name: netcdf
+                mimetype: application/x-netcdf
+    PLE_fishing_suitability:
+        type: collection
+        title: SOL predictions demo with NortSea from ILVO (GeoZarr source)
+        description: EDR example with
+        keywords:
+            - edr
+            - northsea
+        extents:
+            spatial:
+                bbox: [-15.0,61.289951973410744,9.963,46.00029874658926]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/nsea-edr
+              title: base url
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/PLE_fishing_suitability/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-19&f=json
+              title: example json query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-19
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/PLE_fishing_suitability/cube?bbox=-15.0,46.0,9.963,61.29&datetime=2024-04-18/2024-04-19
+              title: example html query significant_wave_height by 2D bbox (-15.0,46.0,9.963,61.29) coordinates and time slice 2024-04-18/2024-04-19
+        providers:
+            - type: edr
+              name: xarray-edr
+              data: "[data path]/NSea/PLE_fishing_suitability.zarr"
+              format:
+                name: zarr
+                mimetype: application/zip

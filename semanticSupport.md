@@ -7,13 +7,13 @@ Semantic on data interpretations and conceptual models.
 
 ## Met-Ocean heritage
 
-Marine community achived considerably high level of the semantic interoperability based on the agreed formats and conventions known as [Climate and Forecast conventions (CF)](http://cfconventions.org).
+Marine community achived considerably high level of the semantic interoperability based on the agreed formats and conventions like the [Climate and Forecast conventions (CF)](http://cfconventions.org).
 On top of data formats like NetCDF and their access protocols like OpenDAP (technical interoperability), CF compiles:
 * [templates](https://www.ncei.noaa.gov/netcdf-templates) of interpretation of data structures with their reference to spatio-temporal domain,
 * attributes vocabularies like (standard_name)[http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#standard-name] with units, * [common transformations](http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-coordinate-subsampling) and
 * contraints on data completeness.
 
-While many elements of the CF convention is based on particular representations, parts were also adopted in the ISO19115 based models proposed by the SeaDataNet specifications.
+Some elements of the CF convention is based on particular representations in their native format of   NetCDF, parts were also adopted in the ISO19115 based models proposed by the SeaDataNet specifications.
 
 ## Machine readability and Linked data
 

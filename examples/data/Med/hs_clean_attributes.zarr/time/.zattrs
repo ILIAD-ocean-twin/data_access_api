@@ -1,0 +1,10 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time"
+    ],
+    "_ChunkSizes": 512.0,
+    "calendar": "standard",
+    "long_name": "time",
+    "standard_name": "time",
+    "units": "seconds since 2004-01-01"
+}

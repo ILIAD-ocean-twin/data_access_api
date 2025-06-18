@@ -1,0 +1,106 @@
+  # =================================================================
+#
+# Authors: Tom Kralidis <tomkralidis@gmail.com>
+#
+# Copyright (c) 2020 Tom Kralidis
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use,
+# copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#
+# =================================================================
+
+# configuration update for
+# "Iliad - Digital Twin of the Ocean"
+# use cases made by: Piotr Zaborowski
+#
+# =================================================================
+
+server:
+    bind:
+        host: 127.0.0.1
+        port: 5002
+    url: http://localhost:5002
+    mimetype: application/json; charset=UTF-8
+    encoding: utf-8
+    gzip: false
+    languages:
+        # First language is the default language
+        - en-US
+        - fr-CA
+    # cors: true
+    pretty_print: true
+    limit: 10
+    # templates:
+      # path: /path/to/Jinja2/templates
+      # static: /path/to/static/folder # css/js/img
+    map:
+        url: https://tile.openstreetmap.org/{z}/{x}/{y}.png
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+
+
+logging:
+    level: ERROR
+    #logfile: /tmp/pygeoapi.log
+
+metadata:
+    linked-data:
+        collections-context: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/context.jsonld
+    identification:
+        title:
+            en: Pygeoapi Iliad demo instance
+            # fr: instance par défaut de pygeoapi
+        description:
+            en: this instance is based on the official pygeoapi distribution with some addons in pzaborowski/pygeoapi fork. It contains small layer visualisation enhancements, support of zarr and netCDF in EDR, extended linked data support on the collection level.
+            # fr: pygeoapi fournit une API aux données géospatiales
+        keywords:
+            en:
+                - geospatial
+                - data
+                - api
+            fr:
+                - géospatiale
+                - données
+                - api
+        keywords_type: theme
+        terms_of_service: https://creativecommons.org/licenses/by/4.0/
+        url: http://defs-dev.opengis.net/iliad-pygeo/
+    license:
+        name: CC-BY 4.0 license
+        url: https://creativecommons.org/licenses/by/4.0/
+    provider:
+        name: Organization Name
+        url: https://pygeoapi.io https://ogc.org
+    contact:
+        name: Piotr Zaborowski
+        # position: Position Title
+        # address: pzaborowski [at] ogc.org
+        # city: City
+        # stateorprovince: Administrative Area
+        # postalcode: Zip or Postal Code
+        # country: Country
+        # phone: +xx-xxx-xxx-xxxx
+        # fax: +xx-xxx-xxx-xxxx
+        email: pzaborowski [at] ogc.org
+        # url: ogc.org
+        # hours: Mo-Fr 08:00-17:00
+        # instructions: During hours of service. Off on weekends.
+        role: pointOfContact
+resources:
