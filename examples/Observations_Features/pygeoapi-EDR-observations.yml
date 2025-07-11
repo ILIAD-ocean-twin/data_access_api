@@ -1,0 +1,144 @@
+    my-observations-schema.org:
+        type: collection
+        title: Observations
+        description: My cool observations
+        keywords:
+            - observations
+            - monitoring
+        links:
+            - type: text/csv
+              rel: canonical
+              title: data
+              href: https://github.com/mapserver/mapserver/blob/branch-7-0/msautotest/wxs/data/obs.csv
+              hreflang: en-US
+            - type: text/csv
+              rel: alternate
+              title: data
+              href: https://raw.githubusercontent.com/mapserver/mapserver/branch-7-0/msautotest/wxs/data/obs.csv
+              hreflang: en-US
+        extents:
+            spatial:
+                bbox: [ 34,31,35,32 ]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 2024-01-30T18:24:39Z
+                end: 2024-04-30T08:57:29Z
+        providers:
+            - type: feature
+              name: CSV
+              data: [data path]/JF_Israel_Jun_2011-Dec_2023_DwC_Format_25.3.2024-JF_Jun_2011-Dec_2023_DwC_Format_25.3.2024-pp.csv-e
+              id_field: occurenceID
+              geometry:
+                  x_field: decimalLongitude
+                  y_field: decimalLatitude
+    # my-observations-linked:
+    #     type: collection
+    #     title: Observations linked
+    #     description: My cool observations with definitions
+    #     keywords:
+    #         - observations
+    #         - monitoring
+    #     linked-data:
+    #         direct-context:
+    #           - https://ogcincubator.github.io/iliad-apis-features/build/annotated/hosted/iliad/api/features/oim-obs/context.jsonld
+    #           - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/47b1aaa3ba6bbf513665993b7bbb8c04b0e162b7/jsonld/oimOceanProfile-context.jsonld
+    #           - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/crossDomain-context.jsonld
+    #           - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/metadata-context.jsonld
+    #     links:
+    #         - type: text/csv
+    #           rel: canonical
+    #           title: data
+    #           href: https://github.com/mapserver/mapserver/blob/branch-7-0/msautotest/wxs/data/obs.csv
+    #           hreflang: en-US
+    #         - type: text/csv
+    #           rel: alternate
+    #           title: data
+    #           href: https://raw.githubusercontent.com/mapserver/mapserver/branch-7-0/msautotest/wxs/data/obs.csv
+    #           hreflang: en-US
+    #     extents:
+    #         spatial:
+    #             bbox: [ 34,31,35,32 ]
+    #             crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    #         temporal:
+    #             begin: 2024-01-30T18:24:39Z
+    #             end: 2024-04-30T08:57:29Z
+    #     providers:
+    #         - type: feature
+    #           name: CSVObs
+    #           data: [data path]/JF_Israel_Jun_2011-Dec_2023_DwC_Format_25.3.2024-JF_Jun_2011-Dec_2023_DwC_Format_25.3.2024-pp.csv
+    #           id_field: occurenceID
+    #           geometry:
+    #               x_field: decimalLongitude
+    #               y_field: decimalLatitude
+    #           properties_obj:
+    #               hasResult:
+    #                 - scientificName
+    #                 - occurrenceStatus
+    #                 - basisOfRecord
+    #                 - scientificNameID
+    #                 - recordedBy
+    #                 - quantificationMethod
+    #                 - organismQuantity
+    #                 - organismQuantityType
+    #                 - sampleSizeUnit
+    #                 - sampleSizeValue
+    #                 - coordinateUncertaintyInMeters
+    #                 - strandedJellyfish
+    #                 - distanceWalkedinmeters
+
+    my-observations-linked-typed:
+        type: collection
+        title: Observations linked
+        description: My cool observations with definitions
+        keywords:
+            - observations
+            - monitoring
+        linked-data:
+            direct-context:
+              - https://ogcincubator.github.io/iliad-apis-features/build/annotated/hosted/iliad/api/features/oim-obs/context.jsonld
+              - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/47b1aaa3ba6bbf513665993b7bbb8c04b0e162b7/jsonld/oimOceanProfile-context.jsonld
+              - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/crossDomain-context.jsonld
+              - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/metadata-context.jsonld
+        links:
+            - type: text/csv
+              rel: canonical
+              title: data
+              href: https://github.com/mapserver/mapserver/blob/branch-7-0/msautotest/wxs/data/obs.csv
+              hreflang: en-US
+            - type: text/csv
+              rel: alternate
+              title: data
+              href: https://raw.githubusercontent.com/mapserver/mapserver/branch-7-0/msautotest/wxs/data/obs.csv
+              hreflang: en-US
+        extents:
+            spatial:
+                bbox: [ 34,31,35,32 ]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 2024-01-30T18:24:39Z
+                end: 2024-04-30T08:57:29Z
+        providers:
+            - type: feature
+              name: CSVTyped
+              data: [data path]/JF_Israel_Jun_2011-Dec_2023_DwC_Format_25.3.2024-JF_Jun_2011-Dec_2023_DwC_Format_25.3_typed_clean.csv
+              id_field: occurenceID
+              type_field: featureType
+              context_value: https://ogcincubator.github.io/iliad-apis-features/build/annotated/hosted/iliad/api/features/iliad-jellyfish/context.jsonld
+              geometry:
+                  x_field: decimalLongitude
+                  y_field: decimalLatitude
+              properties_obj:
+                  hasResult:
+                    - scientificName
+                    - occurrenceStatus
+                    - basisOfRecord
+                    - scientificNameID
+                    - recordedBy
+                    - quantificationMethod
+                    - organismQuantity
+                    - organismQuantityType
+                    - sampleSizeUnit
+                    - sampleSizeValue
+                    - coordinateUncertaintyInMeters
+                    - strandedJellyfish
+                    - distanceWalkedinmeters

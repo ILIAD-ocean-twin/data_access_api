@@ -1,0 +1,18 @@
+#export SINTEF_influx_token=
+#export Iliad_api_repo=[path to the data_access_api repository]
+#export Iliad_pygeoapi_repo=[path to the pygeoapi repository]
+$Iliad_api_repo/examples/scripts/generate-config.sh \
+	example-config.yml \
+	$Iliad_api_repo/examples/example-config-server.yml \
+	$Iliad_api_repo/examples/Observations_Features/pygeoapi-EDR-observations.yml \
+	$Iliad_api_repo/examples/EDR_Grid/swan-edr.yml/pygeoapi-swan-edr.yml \
+	$Iliad_api_repo/examples/EDR_Grid/pygeo-fisheries-sustainability-edr.yml \
+    $Iliad_api_repo/examples/OGC_API_MapsOnWMS/example-config-Tiles.yml
+sed -i '' 's|\[data\ path\]|/Users/piotr/repos/Iliad/data_access_api/examples/data|g' example-config.yml
+cd $Iliad_pygeoapi_repo
+rm -r build
+python setup.py install
+export PYGEOAPI_CONFIG=../example-config.yml
+export PYGEOAPI_OPENAPI=../example-openapi.yml
+pygeoapi openapi generate $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI
+pygeoapi serve

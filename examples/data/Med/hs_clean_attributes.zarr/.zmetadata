@@ -1,0 +1,254 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "Conventions": "CF - 1.0",
+            "Title": "AquaSafe",
+            "_CoordSysBuilder": "ucar.nc2.dataset.conv.CF1Convention",
+            "bulletin_date": "2018-01-01 00:00:00",
+            "bulletin_type": "operational",
+            "comment": "MOHID product",
+            "contact": "general@mohid.com",
+            "date": 2023.0,
+            "field_type": "mean",
+            "geospatial_lat_max": 47.65,
+            "geospatial_lat_min": 30.05,
+            "geospatial_lon_max": 42.65,
+            "geospatial_lon_min": -6.95,
+            "history": "-",
+            "institution": "HIDROMOD",
+            "netcdf_version_id": "3.6.1",
+            "references": "-",
+            "source": "SWAN Hidromod - Mediterranean Sea - 10 Km V2"
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "eastward_wave_direction_unit_vector/.zarray": {
+            "chunks": [
+                43,
+                41,
+                49
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                172,
+                162,
+                97
+            ],
+            "zarr_format": 2
+        },
+        "eastward_wave_direction_unit_vector/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lon",
+                "lat",
+                "time"
+            ],
+            "_ChunkSizes": [
+                1.0,
+                176.0,
+                496.0
+            ],
+            "coordinates": "lon lat",
+            "long_name": "eastward wave direction unit vector",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "standard_name": "eastward_wave_direction_unit_vector",
+            "units": "-",
+            "valid_max": 1.0,
+            "valid_min": -1.0
+        },
+        "hs/.zarray": {
+            "chunks": [
+                43,
+                41,
+                49
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                172,
+                162,
+                97
+            ],
+            "zarr_format": 2
+        },
+        "hs/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lon",
+                "lat",
+                "time"
+            ],
+            "_ChunkSizes": [
+                1.0,
+                176.0,
+                496.0
+            ],
+            "coordinates": "lon lat",
+            "long_name": "sea surface wave significant height",
+            "maximum": 5.628,
+            "minimum": 0.0,
+            "standard_name": "sea_surface_wave_significant_height",
+            "units": "m",
+            "valid_max": 40.0,
+            "valid_min": 0.0
+        },
+        "lat/.zarray": {
+            "chunks": [
+                162
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                162
+            ],
+            "zarr_format": 2
+        },
+        "lat/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lat"
+            ],
+            "axis": "Y",
+            "long_name": "latitude",
+            "reference": "geographical coordinates, WGS84 projection",
+            "standard_name": "latitude",
+            "units": "degrees_north",
+            "valid_max": 90.0,
+            "valid_min": -90.0
+        },
+        "lon/.zarray": {
+            "chunks": [
+                172
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                172
+            ],
+            "zarr_format": 2
+        },
+        "lon/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lon"
+            ],
+            "axis": "X",
+            "long_name": "longitude",
+            "reference": "geographical coordinates, WGS84 projection",
+            "standard_name": "longitude",
+            "units": "degrees_east",
+            "valid_max": 180.0,
+            "valid_min": -180.0
+        },
+        "northward_wave_direction_unit_vector/.zarray": {
+            "chunks": [
+                43,
+                41,
+                49
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                172,
+                162,
+                97
+            ],
+            "zarr_format": 2
+        },
+        "northward_wave_direction_unit_vector/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "lon",
+                "lat",
+                "time"
+            ],
+            "_ChunkSizes": [
+                1.0,
+                176.0,
+                496.0
+            ],
+            "coordinates": "lon lat",
+            "long_name": "northward wave direction unit vector",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "standard_name": "northward_wave_direction_unit_vector",
+            "units": "-",
+            "valid_max": 1.0,
+            "valid_min": -1.0
+        },
+        "time/.zarray": {
+            "chunks": [
+                97
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                97
+            ],
+            "zarr_format": 2
+        },
+        "time/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "_ChunkSizes": 512.0,
+            "calendar": "standard",
+            "long_name": "time",
+            "standard_name": "time",
+            "units": "seconds since 2004-01-01"
+        }
+    },
+    "zarr_consolidated_format": 1
+}

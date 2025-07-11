@@ -1,0 +1,76 @@
+# =================================================================
+#
+# Authors: Tom Kralidis <tomkralidis@gmail.com>
+#
+# Copyright (c) 2020 Tom Kralidis
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use,
+# copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+#
+# =================================================================
+
+# configuration update for
+# "Iliad - Digital Twin of the Ocean"
+# use cases made by: Piotr Zaborowski
+#
+# =================================================================
+
+
+resources:
+    my-observations-parquet:
+        type: collection
+        title: Observations
+        description: My cool observations
+        keywords:
+            - observations
+            - monitoring
+        linked-data:
+            context:
+                - datetime: https://schema.org/DateTime
+                - vocab: https://example.com/vocab#
+                  stn_id: "vocab:stn_id"
+                  value: "vocab:value"
+        links:
+            - type: text/csv
+              rel: canonical
+              title: data
+              href: https://github.com/mapserver/mapserver/blob/branch-7-0/msautotest/wxs/data/obs.csv
+              hreflang: en-US
+            - type: text/csv
+              rel: alternate
+              title: data
+              href: https://raw.githubusercontent.com/mapserver/mapserver/branch-7-0/msautotest/wxs/data/obs.csv
+              hreflang: en-US
+        extents:
+            spatial:
+                bbox: [ -180,-90,180,90 ]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+            temporal:
+                begin: 2000-10-30T18:24:39Z
+                end: 2007-10-30T08:57:29Z
+        providers:
+            - type: feature
+              name: Parquet
+              data: tests/data/obs.csv
+              id_field: id
+              geometry:
+                  x_field: long
+                  y_field: lat

@@ -1,0 +1,10 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time",
+        "latitude",
+        "longitude"
+    ],
+    "grid_mapping": "crs",
+    "long_name": "Suitability of good catch (>200 kg) for Pleuronectes platessa",
+    "units": "percent"
+}

@@ -1,0 +1,20 @@
+{
+    "Conventions": "CF - 1.0",
+    "Title": "AquaSafe",
+    "_CoordSysBuilder": "ucar.nc2.dataset.conv.CF1Convention",
+    "bulletin_date": "2018-01-01 00:00:00",
+    "bulletin_type": "operational",
+    "comment": "MOHID product",
+    "contact": "general@mohid.com",
+    "date": 2023.0,
+    "field_type": "mean",
+    "geospatial_lat_max": 47.65,
+    "geospatial_lat_min": 30.05,
+    "geospatial_lon_max": 42.65,
+    "geospatial_lon_min": -6.95,
+    "history": "-",
+    "institution": "HIDROMOD",
+    "netcdf_version_id": "3.6.1",
+    "references": "-",
+    "source": "SWAN Hidromod - Mediterranean Sea - 10 Km V2"
+}

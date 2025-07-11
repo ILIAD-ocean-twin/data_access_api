@@ -1,14 +1,40 @@
 # Iliad Data Access API
 
-Iliad Data Access API is based on the OGC EDR API, that is designed to access MetOcean data through convenient API that supports coverage and vector data, Iliad profile will be defined. The profile consist of the schema profile, sample configurations of the reference implementations and persistent playground hosted.
+Iliad Data Access API is based on the OGC API suite, which is designed to share and access various kinds of spatiotemporal data through convenient API that supports coverage and vector data, Iliad profile will be defined. The profile consists of the schema profiles, sample configurations of the reference implementations, and persistent playground hosted.
 
-Federated architecture of the Digital Twin can require several types of the interfaces:
-* data and services discovery: allows to browse and filter resources useful for the twin or being its products and navigate to access services; it is usually realised by the interfaces allowing for metadata browsing, that is realised by the catalogue services (T4.1 and T4.3). To ensure harmonised twin use, it is important to align metadata on the catalogue and access levels.
-* data access: twin data embraces source data from project sensors, 3rd party data exposed by intermediary hubs and data generated from models,
-* services access: access to applications executing Twin models like forecasts and simulations, but also analytical tools generating compositions of the data; in the project it is covered by the WP5. Alignment with DTO API concerns input and output metadata alignment and potentially mechanism that generated data can be exposed via DTO data access APIs.
-* geospatial user feedback (GUF): allows users to report not only generic comments and ratings about a specific dataset, but it allows them to document several aspects related to the purpose of that feedback, to share publications connected with that data or describe specific usages. In this last case, users can also provide documentation of their usage of the target resource(s) as well as report issues or share specific codes or execution sentences. All this information can be referred to a whole dataset/product or to a specific geographical area that can be also documented. GUF standard documentation and schemas have been updated to [version 2](https://github.com/opengeospatial/Geospatial-User-Feedback/tree/main), which extends GUF 1.0 to allow storing reproducible usage. Moreover, an OPEN OGC API based on OGC API records and its implementation in the NiMMbus system (nimmbus.cat) as well as a new standard for GUF JSON codification are being developed.
+
+The federated architecture of the Digital Twin can require several types of interfaces:
+* data and services discovery: allows browsing and filtering resources useful for the twin or its products and navigating to access services; it is usually realized by the interfaces allowing for metadata browsing, which is realized by the catalog services (T4.1 and T4.3). To ensure harmonized twin use, it is important to align metadata on the catalog and access levels.
+* data access: twin data embraces source data from project sensors, 3rd party data exposed by intermediary hubs, and data generated from models,
+* services access: access to applications executing Twin models like forecasts and simulations, but also analytical tools generating compositions of the data; in the project it is covered by the WP5. Alignment with DTO API concerns input and output metadata alignment and potential mechanisms that generated data can be exposed via DTO data access APIs.
+* geospatial user feedback (GUF): allows users to report not only generic comments and ratings about a specific dataset, but it allows them to document several aspects related to the purpose of that feedback, to share publications connected with that data, or to describe specific usages. In this last case, users can also provide documentation of their usage of the target resource(s) as well as report issues or share specific codes or execution sentences. All this information can be referred to a whole dataset/product or to a specific geographical area that can be also documented. GUF standard documentation and schemas have been updated to [version 2](https://github.com/opengeospatial/Geospatial-User-Feedback/tree/main), which extends GUF 1.0 to allow storing reproducible usage. Moreover, an OPEN OGC API based on OGC API records and its implementation in the NiMMbus system (nimmbus.cat), as well as a new standard for GUF JSON codification, are being developed.
+
 
 This repository focuses on the data access APIs that is not covered by other tasks but shall be semantically integrated with these. At the same time, data models and querying shall be adoptable to the various protocols like event streaming and catalogs.
+
+# quick start
+
+Clone this repostory and the pygeapi Iliad fork
+
+```
+clone https://github.com/pzaborowski/pygeoapi.git
+clone https://github.com/ILIAD-ocean-twin/data_access_api.git
+```
+
+Set the environment variable paths in the data_access_api/examples/start_demo or environment and uncomment:
+
+```
+#export Iliad_api_repo=[path to the data_access_api repository]
+#export Iliad_pygeoapi_repo=[path to the pygeoapi repository]
+```
+
+run the data_access_api/examples/start_demo
+
+```
+chmod +x data_access_api/examples/start_demo
+./start_demo
+```
+
 
 ## Groundwork
 
@@ -35,10 +61,10 @@ Considering all the recognised scenarios, the API suite can contain:
 
 | Data Access Protocols | dataset discovery support | extended source information | access method | Semantic support of OIM |
 | --------------------- | ----------------- | ----------------- | ----------------- | ----------------- |
-| [SensorThingsAPI](SensorThingsAPI.md) | no general level information | all the fine grained metadata available for sensors, FoI, Thing | OData/HTTP access to granular data, filtering and grouping | OIM LD context/entailment |
-| [OGC API Coverages/WCS](CoveragesAPI.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming and resolution scaling | OIM LD context/entailment |
-| [OGC API EDR](OGC_EDR/README.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates with trimming | though OIM LD context/entailment |
-| [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | OIM LD context/entailment |
+| [SensorThingsAPI](SensorThingsAPI.md) | no general level information | all the fine grained metadata available for sensors, FoI, Thing | OData/HTTP access to granular data, filtering and grouping | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [OGC API Coverages/WCS](CoveragesAPI.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming and resolution scaling | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [OGC API EDR](OGC_EDR/README.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming | though [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
 | [CF-storages](Archives.md) | in-file DDS metadata | file and variable level key-values | storage specific | various |
 | [OpenDAP](https://www.opendap.org/) | DDS based | NetCDF-like | HTTP | NcML |
 | Geospatial User Feedback | it is metadata enrichment protocol | additional field for lineage steps extent catalog information | OpenAPI/HTTP, access to feedback items and collections | potential, could base on the OAPI Records and ISO19115 after review |
@@ -66,7 +92,7 @@ Recent review of the storage formats in the spirit of the cloud nativeness has c
 Iliad efforts in the APIs development are tightly aligned to the standardisation processes, so the intention is not to design totaly new technical stack, but more to contribute to the existing and emerging standards with the experiences taken from the project and support standards APIs development where they does not exist.
 
 However, with all the web APIs shall follow several requirements for the alignments:
-* be integrated with OIM based on the generic templates
+* be integrated with [OIM](https://github.com/ILIAD-ocean-twin/OIM) based on the generic templates
 * follow [Spatial Data on the Web Best Practices](https://www.w3.org/TR/sdw-bp/), in particular: unique URIs that are refereable between various data sources
 
 ## SensorThings APIs

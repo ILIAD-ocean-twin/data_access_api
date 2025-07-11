@@ -1,0 +1,597 @@
+{
+  "bbox": [
+    24.351858139038086,
+    40.41341018676758,
+    9.969209968386869e+36,
+    9.969209968386869e+36
+  ],
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          24.351858139038086,
+          40.41341018676758
+        ],
+        [
+          24.351858139038086,
+          9.969209968386869e+36
+        ],
+        [
+          9.969209968386869e+36,
+          9.969209968386869e+36
+        ],
+        [
+          9.969209968386869e+36,
+          40.41341018676758
+        ],
+        [
+          24.351858139038086,
+          40.41341018676758
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "title": "No Title",
+    "description": "No Description",
+    "datetime": [
+      "2023-04-09T01:00:00Z"
+    ],
+    "created": "2024-10-03 10:22:35.026590+00:00",
+    "updated": [
+      "2025-04-14T15:07:14.867856Z"
+    ],
+    "start_datetime": "2023-04-09T01:00:00Z",
+    "end_datetime": "2023-04-12T01:00:00.000Z",
+    "license": "optional legal provisions under which this collection is made available. use links where available, preferably from SPDX register",
+    "cube:dimensions": {
+      "trajectory": {
+        "type": "trajectory",
+        "extent": [
+          1,
+          1000
+        ],
+        "unit": "1"
+      },
+      "time": {
+        "type": "temporal",
+        "extent": [
+          "2023-04-09T01:00:00",
+          "2023-04-12T01:00:00"
+        ]
+      }
+    },
+    "cube:variables": {
+      "status": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "moving": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "age_seconds": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "s"
+      },
+      "origin_marker": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "lon": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "degrees_east"
+      },
+      "lat": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "degrees_north"
+      },
+      "z": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m"
+      },
+      "wind_drift_factor": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "%"
+      },
+      "current_drift_factor": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "1"
+      },
+      "terminal_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m/s"
+      },
+      "mass_oil": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "viscosity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m2/s"
+      },
+      "density": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg/m^3"
+      },
+      "bulltime": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "s"
+      },
+      "interfacial_area": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m2"
+      },
+      "mass_dispersed": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "mass_evaporated": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "mass_biodegraded": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "kg"
+      },
+      "fraction_evaporated": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "%"
+      },
+      "water_fraction": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "%"
+      },
+      "oil_film_thickness": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m"
+      },
+      "diameter": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data",
+        "unit": "m"
+      },
+      "x_sea_water_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "y_sea_water_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "x_wind": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "y_wind": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "upward_sea_water_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_significant_height": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_stokes_drift_x_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_stokes_drift_y_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_period_at_variance_spectral_density_maximum": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_surface_wave_mean_period_from_variance_spectral_density_second_frequency_moment": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_ice_area_fraction": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_ice_x_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_ice_y_velocity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_water_temperature": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_water_salinity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "sea_floor_depth_below_sea_level": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "ocean_vertical_diffusivity": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "land_binary_mask": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      },
+      "ocean_mixed_layer_thickness": {
+        "dimensions": [
+          "trajectory",
+          "time"
+        ],
+        "type": "data"
+      }
+    },
+    "themes": [
+      {
+        "concepts": [
+          {
+            "id": "12301",
+            "name": "water resources management"
+          },
+          {
+            "id": "water_resources_management",
+            "url": "http://www.eionet.europa.eu/gemet/concept/12301"
+          }
+        ],
+        "scheme": "http://www.eionet.europa.eu/gemet/concept/"
+      },
+      {
+        "concepts": [
+          {
+            "id": "water_quality"
+          }
+        ],
+        "scheme": "http://mmisw.org/ont/ioos/category"
+      }
+    ],
+    "keywords": [
+      "water",
+      "ozoother keyword"
+    ],
+    "wasGeneratedBy": {
+      "provType": "Activity",
+      "id": "surveys:DP-1-S1",
+      "activityType": "InitialSurvey",
+      "endedAtTime": "2023-10-05T05:03:15+01:00",
+      "wasAssociatedWith": "staff:jd234",
+      "used": {
+        "id": "regulations:Act3",
+        "entityType": "Legislation",
+        "wasAttributedTo": "agents:someGovernment",
+        "links": [
+          {
+            "href": "https://some.gov/linktoact/",
+            "rel": "related"
+          }
+        ]
+      }
+    },
+    "contacts": [
+      {
+        "name": "name of the contact, name or organisation is required or both, all the other fields are optiopnal. Roles can be defined on the contact or phones|emails|addresses level",
+        "organization": "name of the organisation, name or organisation is required or both, all the other fields are optional. schema https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/contact.yaml",
+        "identifier": " optional identifier of the contact",
+        "position": "optional position of the contact",
+        "logo": {
+          "href": "https://example.com/logo.png",
+          "rel": "icon",
+          "type": "image/png",
+          "description": "descritpion is not required here just for a not in the example: link shall have rel=icon and type shall be image"
+        },
+        "links": [
+          {
+            "href": "https://woudc.org",
+            "rel": "about",
+            "type": "text/html"
+          }
+        ],
+        "phones": [
+          {
+            "value": "+99123456983123",
+            "role": "contactPoint"
+          }
+        ],
+        "emails": [
+          {
+            "value": "jsmith@example.com",
+            "role": "rightsHolder"
+          }
+        ],
+        "addresses": [
+          {
+            "deliveryPoint": [
+              "optional detailed address"
+            ],
+            "city": "optional city",
+            "administrativeArea": "optional administrativeArea",
+            "postalCode": "optional postalCode",
+            "country": "optional country"
+          }
+        ],
+        "contactInstructions": "SEE PAGE: https://woudc.org/contact.php",
+        "roles": [
+          "contactPoint",
+          "rightsHolder",
+          "pubisher",
+          "creator",
+          "distributor",
+          "originator",
+          "principalInvestigator",
+          "processor",
+          "resourceProvider",
+          "u"
+        ]
+      }
+    ],
+    "rights": "optional statement that concerns all rights not addressed by the license such as a copyright statement; string defining access rights inline or as URL",
+    "applicableLegislation": "string defining applicable legislation inline or as URL, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
+    "convention": "CF-1.6",
+    "version": "optional resource behind the record version string",
+    "deprecated": false,
+    "latest-version": "optional link to the record with latest version",
+    "predecessor-version": "optional link to the record with previous version",
+    "successor-version": "optional link to the record with next version",
+    "cf:parameter": [
+      {
+        "name": "sea_water_salinity",
+        "schema": "http://vocab.nerc.ac.uk/standard_name/",
+        "unit": "https://qudt.org/2.1/vocab/unit/GM-PER-KiloGM"
+      }
+    ],
+    "dqv:hasQualityMeasurement": "optional description of the quality measures used to generate the content, use wasGeneratedBy.used for cases whereever you can assign quality measure to particular processing step",
+    "dqv:hasQualityMetadata": "optional quality metadata as string or object (with structure TBD)"
+  },
+  "id": "simulation",
+  "stac_version": "1.1.0",
+  "assets": {
+    "data": {
+      "href": "~/Downloads/simulation.nc",
+      "title": "NetCDF Data",
+      "media_type": "application/x-netcdf"
+    }
+  },
+  "links": [
+    {
+      "href": "tests/simulation/simulation.json",
+      "rel": "self",
+      "title": "optional link to this record"
+    },
+    {
+      "href": "~/Downloads/simulation.nc",
+      "rel": "enclosure",
+      "type": "application/x-hdf",
+      "title": "optional raw file"
+    },
+    {
+      "href": "~/Downloads/simulation.nc",
+      "rel": "preview",
+      "type": "image/png",
+      "title": "optional thumbnail image preview"
+    },
+    {
+      "href": "tests/simulation/simulation.zip",
+      "rel": "sample",
+      "type": "application/x-hdf",
+      "title": "optional link to the sample data, either one enclosure or service is required in Iliad profile"
+    },
+    {
+      "href": "tests/simulation/simulation.zip",
+      "rel": "sample",
+      "type": "application/x-hdf",
+      "title": "link to the data, either one enclosure or service is required in Iliad profile"
+    },
+    {
+      "href": "https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.pdf",
+      "rel": "conformance",
+      "type": "text/html",
+      "title": "link to the resource confirmance speficication"
+    },
+    {
+      "href": "https://example.com/ows/wms",
+      "rel": "service",
+      "type": "application/xml",
+      "title": "optional link to the web service (not raw file) like OGC Web Map Service (WMS) either one enclosure or service is required in Iliad profile"
+    },
+    {
+      "href": "https://example.com/license",
+      "rel": "license",
+      "type": "text/html",
+      "title": "optional link to the license"
+    },
+    {
+      "href": "https://example.com/next_data_record",
+      "rel": "next",
+      "type": "text/html",
+      "title": "optional link to the next in the serie"
+    },
+    {
+      "href": "https://example.com/prev_data_record",
+      "rel": "prev",
+      "type": "text/html",
+      "title": "optional link to the previous in the serie"
+    },
+    {
+      "href": "https://example.com/prev_data_record",
+      "rel": "parent",
+      "type": "text/html",
+      "title": "optional link to the parent if data in series or other parent in the hierarchy"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/contacts/v0.1.1/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+  ],
+  "time": {
+    "interval": [
+      "2023-04-09 01:00:00+00:00",
+      "2023-04-12 01:00:00+00:00"
+    ],
+    "resolution": "P1D"
+  },
+  "crs": "EPSG:4326",
+  "conformsTo": [
+    "https://ogcincubator.github.io/geodcat-ogcapi-records/bblock/ogc.geo.geodcat.geodcat-stac-eo/",
+    "https://ogcincubator.github.io/iliad-apis-features/bblock/ogc.hosted.iliad.api.stac_record",
+    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
+    "https://stac-extensions.github.io/datacube/v2.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/cf/v0.2.0/schema.json",
+    "https://stac-extensions.github.io/contacts/v0.1.1/schema.json",
+    "https://stac-extensions.github.io/version/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/processing/v1.2.0/schema.json"
+  ]
+}
