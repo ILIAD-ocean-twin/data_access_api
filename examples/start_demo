@@ -7,7 +7,7 @@ $Iliad_api_repo/examples/scripts/generate-config.sh \
 	$Iliad_api_repo/examples/Observations_Features/pygeoapi-EDR-observations.yml \
 	$Iliad_api_repo/examples/EDR_Grid/swan-edr.yml/pygeoapi-swan-edr.yml \
 	$Iliad_api_repo/examples/EDR_Grid/pygeo-fisheries-sustainability-edr.yml \
-	$Iliad_api_repo/examples/OGC_API_MapsTilesOnOMS/example-config-Tiles.yml
+    $Iliad_api_repo/examples/OGC_API_MapsOnWMS/example-config-Tiles.yml
 sed -i '' 's|\[data\ path\]|/Users/piotr/repos/Iliad/data_access_api/examples/data|g' example-config.yml
 cd $Iliad_pygeoapi_repo
 rm -r build

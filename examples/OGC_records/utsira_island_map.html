@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_11fcf0a22b15b24b4c1cf629213048ef {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_11fcf0a22b15b24b4c1cf629213048ef" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_11fcf0a22b15b24b4c1cf629213048ef = L.map(
+                "map_11fcf0a22b15b24b4c1cf629213048ef",
+                {
+                    center: [4.9333, 59.25],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_983a1c7567f7fd3f581e3400f488a271 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_983a1c7567f7fd3f581e3400f488a271.addTo(map_11fcf0a22b15b24b4c1cf629213048ef);
+        
+    
+            var marker_83e9e3672b4ab4048b2a1af13e3fb6f1 = L.marker(
+                [4.9333, 59.25],
+                {}
+            ).addTo(map_11fcf0a22b15b24b4c1cf629213048ef);
+        
+    
+        var popup_9cf1fe31430bf76ca3806c134b5aa0c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96ce99412eac6bad0aeb40511b99d347 = $(`<div id="html_96ce99412eac6bad0aeb40511b99d347" style="width: 100.0%; height: 100.0%;">Utsira Island</div>`)[0];
+                popup_9cf1fe31430bf76ca3806c134b5aa0c6.setContent(html_96ce99412eac6bad0aeb40511b99d347);
+            
+        
+
+        marker_83e9e3672b4ab4048b2a1af13e3fb6f1.bindPopup(popup_9cf1fe31430bf76ca3806c134b5aa0c6)
+        ;
+
+        
+    
+    
+            var polygon_6c82c64c50e762480520051f7aca3f20 = L.polygon(
+                [[4.9333, 59.25], [4.9333, 59.26], [4.9433, 59.26], [4.9433, 59.25], [4.9333, 59.25]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_11fcf0a22b15b24b4c1cf629213048ef);
+        
+    
+        var popup_fb4167939d7178f09bc8975794c0c76b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0beff11401a701c14c1e3b95ed36e71f = $(`<div id="html_0beff11401a701c14c1e3b95ed36e71f" style="width: 100.0%; height: 100.0%;">Utsira Island Footprint</div>`)[0];
+                popup_fb4167939d7178f09bc8975794c0c76b.setContent(html_0beff11401a701c14c1e3b95ed36e71f);
+            
+        
+
+        polygon_6c82c64c50e762480520051f7aca3f20.bindPopup(popup_fb4167939d7178f09bc8975794c0c76b)
+        ;
+
+        
+    
+</script>
+</html>
