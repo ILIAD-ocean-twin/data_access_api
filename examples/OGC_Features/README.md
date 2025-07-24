@@ -24,7 +24,7 @@ cd pygeoapi
 pip3 install --upgrade pip
 pip3 install -r requirements.txt
 python3 setup.py install
-wget https://raw.githubusercontent.com/pzaborowski/pygeoapi/master/pygeoapi/example-config-observations.yml -O example-config.yml
+wget https://raw.githubusercontent.com/ILIAD-ocean-twin/data_access_api/refs/heads/main/examples/OGC_Features/example-config-observations.yml -O example-config.yml
 export PYGEOAPI_CONFIG=example-config.yml
 export PYGEOAPI_OPENAPI=example-openapi.yml
 pygeoapi openapi generate $PYGEOAPI_CONFIG > $PYGEOAPI_OPENAPI
