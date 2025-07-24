@@ -30,7 +30,10 @@ The approach taken is to define core suite of standard elements that can express
 
 ## Data Access APIs SUITE
 
-Considering all the recognised scenarios, the API suite can contain:
+Considering all the recognised scenarios, available generic stadnards and already available services, proposed approach is to extend and profile available standards were relevant and propose changes to the underlying standards and their reference implementations of the new ones like OGC APIs and cloud friendly formats.
+Also, this repository contains manuals of the profiles usage and examples of the configurations.
+
+The API suite is based on:
 * fine grained access to observations based on the OGC Sensor Things API, optionally with STA+ extension for the Citizen Science
 * aggregated representation like coverages  of the observations and models outcomes based on the Coverages and Environmental Data Retrieval API in the CoverageJSON/NetCDF/Zarr formats
 * vector features representation based on OGC API Features that could represent locations, physical installations but also be an alternative observations representation consumable by wider range of client applications
@@ -42,12 +45,83 @@ Considering all the recognised scenarios, the API suite can contain:
 
 | Data Access Protocols | dataset discovery support | extended source information | access method | Semantic support of OIM |
 | --------------------- | ----------------- | ----------------- | ----------------- | ----------------- |
-| [SensorThingsAPI](SensorThingsAPI.md) | no general level information | all the fine grained metadata available for sensors, FoI, Thing | OData/HTTP access to granular data, filtering and grouping | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
-| [OGC API Coverages/WCS](CoveragesAPI.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming and resolution scaling | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
-| [OGC API EDR](OGC_EDR/README.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming | though [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
-| [OGC API Tiles/WM(T)S](Tiles.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [SensorThingsAPI](./SensorThingsAPI.md) | no general level information | all the fine grained metadata available for sensors, FoI, Thing | OData/HTTP access to granular data, filtering and grouping | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [OGC API Features EDR](EDR_Features.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming | though [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [OGC API Map/Tiles/WM(T)S](Maps_Tiles.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates as tiles with trimming and resolution scaling | [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
+| [OGC API Coverages EDR](EDR_Coverages.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming | though [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
 | [CF-storages](Archives.md) | in-file DDS metadata | file and variable level key-values | storage specific | various |
 | [OpenDAP](https://www.opendap.org/) | DDS based | NetCDF-like | HTTP | NcML |
+
+
+## Iliad specificity
+
+Iliad efforts in the APIs development are tightly aligned to the standardisation processes, so the intention is not to design totaly new technical stack, but more to contribute to the existing and emerging standards with the experiences taken from the project and support standards APIs development where they does not exist.
+
+However, with all the web APIs shall follow several requirements for the alignments:
+* be integrated with [OIM](https://github.com/ILIAD-ocean-twin/OIM) based on the generic templates
+* follow [Spatial Data on the Web Best Practices](https://www.w3.org/TR/sdw-bp/), in particular: unique URIs that are refereable between various data sources
+* enable further integration with the data Spaces initiatives caloguing and access management though the formalised references to the GeoDCAT standard.
+
+## Features and Coverage Data Access APIs Technical description
+
+OGC API EDR and OGC API Maps is built on top of the OpenAPI specification and OGC APIs practice to support hierarchical, filterable and queryable discovery. Default encoding of the OGC APIs is JSON for M2M with HTML for human-machine interfaces (HMI) support. EDR supports binary data in NetCDF as well.
+
+In addition, OGC API Records is proposed in Iliad for metadata repository of datasets and data, and Sensor Things API for the sensor data and measurements.
+
+Iliad APIs contains:
+ - behavioural data exchange model reference to the core Standards
+ - extensions proposed for the marine environment including data models and semantic uplift for the ocean Information Model support
+ - alignment proposed for the selected legacy marine standards
+ - example configurations of the API based on the reference implementations with proposed extensions
+ - schemas and validation guidelines and tools
+
+
+### Common APIs backbone functions
+
+OGC APIs proposes common structure for any kind of service, which aggregates all the flavours of the data and use cases under the harmonised structure.
+It provides entry point landing page with:
+ - `/` self-description of the interface and data in the metadata form
+ - `/collections` - links to the data and collections
+ - `/conformance` - conformance declaration defining which functionalities from the specifications are implemented in particular endpoint
+
+### EDR as the query interface
+
+Main resources that are exposed in the Iliad  are:
+ - coverages - each coverage file exposed as one collection, variables available as properties within collection. Data can be queried (trimmed) according to query parameter like cube or point
+ - locations - fixed points or areas that defines details of the localisation related to the data gathered for given area. E.g. measurement/sensor localisation with the detailed information about the sensor inline or as link.
+ - vector observations - point measurements, camera images and videos that are exposed by the APIs
+
+ As the extension for non localised data, alignment with sensor description can be considered in the future.
+
+EDR APIs proposes common functions for data filtering collections with bounding box, time extent. for more advanced queries, OGC API Records is recommended. As the extension of the OGC API Features, it can supports multiple properties including free text search and CQL queries.
+
+EDR API supports querying data in [multiple ways] (https://docs.ogc.org/is/19-086r5/19-086r5.html#toc44)
+Description of the endpoints is provided in the [API overview](https://ogcapi.ogc.org/edr/overview.html)
+
+EDR API reference documentation is:
+ - [GitHub repository with API introduction](https://github.com/opengeospatial/ogcapi-environmental-data-retrieval)
+
+Additional learning materials
+ - [Video FOSS4G introduction to EDR and other OGC APIs](https://youtu.be/ctoyVX2C07U?t=712)
+
+#### How to implement
+
+Iliad implementations selectively support cube and position query function as most appropriate for the pilot cases.
+Tailored specification of the API was extracted under [OpenAPI template](https://app.swaggerhub.com/apis/PZB/iliad-dto-test-bblocks/1.0.1#/). Implementation of the API can base on the reference source code (linked above) or directly though the stub generation from the SwaggerHub toolset.
+
+
+### Multiple APIs at one endpoint
+
+If multiple endpoints needs to be combined, reasonable approach is to organise them in the self-describing hierarchy. In this case root level landing page provides all the underlying links and conformance classes, while each of the sub-APIs referred has detailed information about the resources it exposes.
+
+```
+─/ <landing page>
+ ├─ conformance <conformance classes listing both Features, Coverages/EDR and high-level STA conformance classes
+ ├─ edr <combined OpenAPI definition for everything for data access>
+ ├─ collections <OGC-API Records, with use-case specific views on the data>
+ ├─ sta/v1.1 <STA interface, with detailed STA conformance classes on the landing page>
+```
+
 
 ### Metadata role in data access
 
@@ -66,95 +140,6 @@ Recent review of the storage formats in the spirit of the cloud nativeness has c
 * not designed for web and other light applications - visualisation, scaling
 * trade of caching efficiency vs random access
 * easy storage driven access management and control, not obvious are 
-
-## Iliad specificity
-
-Iliad efforts in the APIs development are tightly aligned to the standardisation processes, so the intention is not to design totaly new technical stack, but more to contribute to the existing and emerging standards with the experiences taken from the project and support standards APIs development where they does not exist.
-
-However, with all the web APIs shall follow several requirements for the alignments:
-* be integrated with [OIM](https://github.com/ILIAD-ocean-twin/OIM) based on the generic templates
-* follow [Spatial Data on the Web Best Practices](https://www.w3.org/TR/sdw-bp/), in particular: unique URIs that are refereable between various data sources
-
-## SensorThings APIs
-
-[SensorThings API](https://ogcapi.ogc.org/sensorthings/) is the OGC standard endorsed as the INSPIRE good practice to share observations data. It is compliant with the ISO 19156/OGC Observations & Measurements standards.
-Entry level descriptions of the API are available on the [Wikipedia](https://en.wikipedia.org/wiki/SensorThings_API)
-
-### Use cases
-
-STA is flexible standard useful in particular for:
- - exposing observations with all the Sensor, Observed Properties, Location in a flexible way so that client can build the query to access observations in the light way and get the whole related data though simple queries (like joins in SQL). Example STA demo is available on the [PSNC infrastruture](https://grlc-dpi-enabler-demeter.apps.paas-dev.psnc.pl/api-git/ILIAD-ocean-twin/JF-API/)
- - providing observation as the data stream as STA was design to support both request/response model on HTTP and pub/sub on MQTT
- - providing observation context definition as the supplement for the aggregated data e.g. linking aggregated in NetCDF/Zarr/EDR API to the Sensor and Location.
- - use of ODATA clients
-
-[Implementation steps](./SensorThingsAPI.md)
-
-## Coverage Data Access APIs Technical description
-
-Base EDR is built on top of the OpenAPI specification and OGC APIs practice to support hierarchical, filterable and queryable discovery. Default encoding of the OGC APIs is JSON for M2M with HTML for human-machine interfaces (HMI) support. EDR supports binary data in NetCDF as well.
-EDR API reference documentation is:
- - [EDR landing page with specification](https://ogcapi.ogc.org/edr/)
- - [GitHub repository with API introduction](https://github.com/opengeospatial/ogcapi-environmental-data-retrieval)
-
-Additional learning materials
- - [Video FOSS4G introduction to EDR and other OGC APIs](https://youtu.be/ctoyVX2C07U?t=712)
-
-In addition, OGC API Records is proposed in Iliad for metadata repository of datasets and data, and Sensor Things API for the sensor data and measurements.
-
-Iliad APIs contains:
- - behavioural data exchange model reference to the core Standards
- - extensions proposed for the marine environment including data models and semantic uplift for the ocean Information Model support
- - alignment proposed for the selected legacy marine standards
- - example configurations of the API based on the reference implementations with proposed extensions
- - [TODO] schemas and validation guidelines and tools
-
-
- ### How to implement
-
- https://app.swaggerhub.com/apis/PZB/iliad-dto-test-bblocks/1.0.1#/
-
-### Potential further time_steps
-
- - Catalog profiles aligned with the OIM. most probably based on the OGC API Records draft standards (as for end of 2023). the benefit would be to have STAC support given with STAC 1.0.0 version and option to define metadata of the STAC
-
-
-
-
-### Main functions
-
-Like other OGC APIs, EDR provides entry point landing page with:
- - `/` self-description of the interface and data in the metadata form
- - `/collections` - links to the data and collections
- - `/conformance` - conformance declaration defining which functionalities from the specifications are implemented in particular endpoint
-
-Description of the endpoints is provided in the [API overview](https://ogcapi.ogc.org/edr/overview.html)
-
-Main resources that are exposed in the Iliad EDR are:
- - coverages - each coverage file exposed as one collection, variables available as properties within collection. Data can be queried (trimmed) according to query parameter like cube or point
- - locations - fixed points or areas that defines details of the localisation related to the data gathered for given area. E.g. measurement/sensor localisation with the detailed information about the sensor inline or as link.
- - vector observations - point measurements, camera images and videos that are exposed by the APIs
-
- As the extension for non localised data, alignment with sensor description can be considered in the future.
-
-EDR APIs supports filtering collections with bounding box, time extent. for more advanced queries, OGC API Records is recommended. As the extension of the OGC API Features, it can supports multiple properties including free text search and CQL queries.
-
-EDR API supports querying data in [multiple ways] (https://docs.ogc.org/is/19-086r5/19-086r5.html#toc44)
-
-### Multiple APIs
-
-If multiple endpoints needs to be combined, reasonable approach is to organise them in the self-describing hierarchy. In this case root level landing page provides all the underlying links and conformance classes, while each of the sub-APIs referred has detailed information about the resources it exposes.
-
-```
-─/ <landing page>
- ├─ conformance <conformance classes listing both Features, Coverages/EDR and high-level STA conformance classes
- ├─ edr <combined OpenAPI definition for everything for data access>
- ├─ collections <OGC-API Records, with use-case specific views on the data>
- ├─ sta/v1.1 <STA interface, with detailed STA conformance classes on the landing page>
-```
-<sub> Example APIs suite </sub>
-
-
 
 # Relation to the other standards, APIs and data formats
 
@@ -214,3 +199,7 @@ Beyond vanila DAP, ERDDAP proposes their own API which is a combination of catal
 The work has been co-funded by the European Union, Switzerland and the United Kingdom under the Horizon Europe:
 * [Iliad project](https://www.ogc.org/initiatives/iliad/) (GA 101037643)
 
+
+# References
+[OGCGEOSPARQLSF]GeoSPARQL formal defintiion of simple features https://opengeospatial.github.io/ogc-geosparql/geosparql11/sf_geometries.ttl
+[OGCSFACA] Open Geospatial Consortium: OGC 06-103r4 OpenGIS® Implementation Standard for Geographic information — Simple feature access — Part 1: Common architecture https://www.opengis.net/doc/is/sfa/1.2.1

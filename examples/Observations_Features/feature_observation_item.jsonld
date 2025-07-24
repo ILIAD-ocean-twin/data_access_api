@@ -1,0 +1,72 @@
+{% block body %}
+{
+    "@context": {{ data['@context']|replace("'", '"') }},
+    "@id": "{{ data['@id'] }}",
+    "id": "{{ data['id'] }}",
+    "type": "{{ data['type'] }}",
+    "geometry": "{{ data['geometry'] }}",
+    "featureType": "sosa:Observation",
+    "properties": {
+        "occurrence": "{{ data['occurrence'] }}",
+        "date": "{{ data['date'] }}",
+        "dateFix": "{{ data['dateFix'] }}",
+        "time": "{{ data['time'] }}",
+        "quantificationMethod": "{{ data['quantificationMethod'] }}",
+        "organismQuantityType": "{{ data['organismQuantityType'] }}",
+        "MachineObservation": "{{ data['MachineObservation'] }}",
+        "eventType": "{{ data['eventType'] }}",
+        "Stinging_Water": "{{ data['Stinging_Water'] }}",
+        "obsID": "{{ data['obsID'] }}",    
+
+        "phenomenonTime": "{{ data['eventDate_ori'] }}",
+        "resultTime": "{{ data['eventDate'] }}",
+        "observedProperty": "jellyFishAbundanceProperty",
+        "basisOfRecord": "{{ data['basisOfRecord'] }}",
+        "occurrenceStatus": "{{ data['occurrenceStatus'] }}",
+        "distanceWalkedInMeters": "{{ data['distanceWalkedinmeters'] }}",
+        "hasFeatureOfInterest": {
+            "type": "Feature",
+            "featureType": [
+                "FeatureOfInterest",
+                "Point",
+                "Location"
+            ],
+            "properties": {
+                "lat": "{{ data['decimalLatitude_ori'] }}",
+                "long": "{{ data['decimalLongitude_ori'] }}",
+                "coordinateUncertaintyInMeters": {{data['coordinateUncertaintyInMeters']}},
+                "locality": {{data['Location_20_Zones_ID']}},
+                "Location_20_Zones_ID": {{data['Location_20_Zones_ID']}},
+                "distanceFromShore": "{{data['Distance_from_coast']}}"
+            }
+        },
+        "madeBySensor": {
+            "type": [
+                "Sensor",
+                "HumanSensor"
+            ],
+            "label": "Human sensor: {{data['recordedBy']}}",
+            "goldUser": {{data['goldUser']}},
+            "agentConfidence": "1"
+        },
+        "hasResult": {
+            "type": [
+                "Result",
+                "JellyFishAbundance"
+            ],
+            "aphiaID": "{{data['scientificNameID']}}",
+            "individualCount": {{data['Quantity_Reported']}},
+            "organismQuantity": "{{data['organismQuantity']}}",
+            "organismQuantityType": "{{data['organismQuantityType']}}",
+            "sampleSizeUnit": "{{data['sampleSizeUnit']}}",
+            "sampleSizeValue": "{{data['sampleSizeValue']}}",
+            "scientificName": "{{data['scientificName']}}",
+            "scientificNameID": "{{data['scientificNameID']}}",
+            "stingByJellyFish": "{{data['stingByJellyFish']}}",
+            "strandedJellyfish": "{{data['strandedJellyfish']}}"
+        }
+    },
+    "links": {{ data['links']|replace("'", '"') }}
+}
+
+{% endblock %}
