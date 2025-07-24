@@ -14,26 +14,7 @@ This repository focuses on the data access APIs that is not covered by other tas
 
 # quick start
 
-Clone this repostory and the pygeapi Iliad fork
-
-```
-clone https://github.com/pzaborowski/pygeoapi.git
-clone https://github.com/ILIAD-ocean-twin/data_access_api.git
-```
-
-Set the environment variable paths in the data_access_api/examples/start_demo or environment and uncomment:
-
-```
-#export Iliad_api_repo=[path to the data_access_api repository]
-#export Iliad_pygeoapi_repo=[path to the pygeoapi repository]
-```
-
-run the data_access_api/examples/start_demo
-
-```
-chmod +x data_access_api/examples/start_demo
-./start_demo
-```
+[Quick start manual for dev environment](examples/README.md)
 
 
 ## Groundwork

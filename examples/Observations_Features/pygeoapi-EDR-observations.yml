@@ -94,11 +94,13 @@
             - observations
             - monitoring
         linked-data:
-            direct-context:
+            context:
               - https://ogcincubator.github.io/iliad-apis-features/build/annotated/hosted/iliad/api/features/oim-obs/context.jsonld
               - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/47b1aaa3ba6bbf513665993b7bbb8c04b0e162b7/jsonld/oimOceanProfile-context.jsonld
               - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/crossDomain-context.jsonld
               - https://raw.githubusercontent.com/ILIAD-ocean-twin/OIM/main/jsonld/metadata-context.jsonld
+            item_template: pygeoapi/templates/collections/items/feature_observation_item.jsonld
+
         links:
             - type: text/csv
               rel: canonical
