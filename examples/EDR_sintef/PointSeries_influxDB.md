@@ -10,6 +10,7 @@ In general, each table and group key data can have different sampling frequency 
 If they belongs to different Group keys specifying _measument and instrument, they cannot be merged into one query result also.
 
 # Data grid representation constraints
+
 Grid and data cube data formats like Zarr, NetCDF, CoverageJSON are convenient to be used together with other oceanographic and marine as they share data model. On the other hand, they are based on the 'coverage' concept as function of place, time and the measured property. data representation is the table with values for each domain point. As the function must be defined on given domain, in our case of unsynchronised sample timestamps, there would be either different domains for each sensor measurements stream or great part of the values of the function would be undefined.
 
 Example: measurement 'a' is given at t0, t4, t6, measurement 'b' is given at t1, t4, t5, the domain of merged data is t0,t1,t4,t5, but a(t1), a(t6), b(t6) are unknown and NA value must appear in the datacube query peyload.
@@ -31,7 +32,6 @@ For example, following the EDR API collections structure collection can contain 
 
 * most of the metadata describing sensor is not given in the influx db. either the definition of the collection and/or observed property needs to grap these properties from the configuration. it can be done as set of properties or reference to the
 
-* separation of
 
 Proposed API collections structure could be hierarchical:
 ```

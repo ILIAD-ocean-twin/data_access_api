@@ -1,11 +1,11 @@
 Tracking particles is a scenario used in the Oil Spill and Water Pollution Iliad pilots[TODO references]
 
-In this scenario, starting from the discrete model of the particles like microplastic or oil drops, we
+In this scenario, starting from the discrete model of the particles like microplastic or oil drops.
 
 Commonly used models like OpenDrift generate data in the NetCDF file with a data frame with dimensions:
  - Trajectory - representing particles
  - Time - timestamps of the snapshots
- In this representation It is useful to think about the snapshots first. In each snapsho particles have new location and depth + they can have additional properties.
+ In this representation It is useful to think about the snapshots first. In each snapshot particles have new location and depth + new values of the other properties.
  Particles are tracked in the model and they are of specific type like oil, microplastic etc.
 
  ![image](../images/MultiTrajectories_covjson.png)
