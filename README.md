@@ -51,6 +51,7 @@ The API suite is based on:
 | [OGC API Coverages EDR](EDR_Coverages.md) | OGC API compliant | limited in standard, available though extensions and the [OIM](https://github.com/ILIAD-ocean-twin/OIM) alignment | OpenAPI/HTTP, access to aggregates with trimming | though [OIM](https://github.com/ILIAD-ocean-twin/OIM) LD context/entailment |
 | [CF-storages](Archives.md) | in-file DDS metadata | file and variable level key-values | storage specific | various |
 | [OpenDAP](https://www.opendap.org/) | DDS based | NetCDF-like | HTTP | NcML |
+| Geospatial User Feedback | it is metadata enrichment protocol | additional field for lineage steps extent catalog information | OpenAPI/HTTP, access to feedback items and collections | potential, could base on the OAPI Records and ISO19115 after review |
 
 
 ## Iliad specificity
@@ -164,13 +165,14 @@ Integration with the API includes:
 
 ### SeaDataNet
 
-TBD but SeaDataNet is a combination of the ISO19115 profile for metadata, CF and own encodings for tabular data, so the overlap is in the abovementioned standards
+SeaDataNet is a combination of the ISO19115 profile for metadata, CF and own encodings for tabular data, so the overlap is in the abovementioned standards.
+Iliad water quality pilot, which is contributing to the EDITO though the EMODNet and SeaDataNet Compliance has implemented the NetCDF alignment which is documented in the new formats like GeoZarr in the Iliad OGC building blocks.
 
 ### Spatio Temporal Asset Catalogue (STAC), Catalog Web Service (CSW) and Records API
 
 With the recently published OGC API Records, that is a superset of STAC (STAC is de-facto profile of Records), they became of interest of Iliad as potenially including all the metadata.
-
 Iliad Service layer can generate STAC files. They are not going to be directly integrated in the APIs, while some metadata can be passed to the data catalog.
+the STAC profile of the Ocean Information is the common mapping of the catalog properties that was aligned with the Records properties with the help of the Iliad cases.
 
 ### CF convention and NCEI NetCDF
 
