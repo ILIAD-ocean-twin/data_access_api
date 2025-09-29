@@ -36,8 +36,7 @@ Based on the legacy systems review, available techniques and
 Proposed Iliad APIs, the target is the 3rd level support.
 In practice, it means the full context/namespace is defined for all the entities and values, and it links to the common vocabularies.
 
-### [APIs semantic support implementation](semantic_API.md)
-
+### APIs semantic support implementation
 
 NOTE:
 on API level, above 3rd level is 4th level ready once the community defines crosswalks between implicit, machine readable data serialisations and it is included in the OIM.
@@ -49,3 +48,12 @@ observationAt(time, lat_value, lon_value, z_value)
   value(indexof(time,timedomain), indexof(lat_value, lat_domain), indexof(lon_value, lon_domain), indexof(z_value,z_dmain),
 value_range)
 ```
+
+Semantic support can be provided on the strages or on the APIs.
+[Herein example](https://github.com/ILIAD-ocean-twin/data_access_api/blob/main/EDR_Features.md#semantic-enablement) describes how the features based API can be uplifted with the sementic annotations.
+Similarily, the coverage payload from APIs can be implemented using
+ - [pygeoapi templates](https://docs.pygeoapi.io/en/latest/html-templating.html)
+ - [OIM contexts](https://github.com/ILIAD-ocean-twin/OIM/tree/main/metadata-json-schema)
+ - [geospatial contexts](https://ogcincubator.github.io/iliad-apis-features/bblock)
+https://github.com/ILIAD-ocean-twin/data_access_api/blob/main/EDR_Features.md#semantic-enablement
+ Example setup is provided with feature types 
