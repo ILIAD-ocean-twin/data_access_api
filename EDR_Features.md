@@ -47,7 +47,7 @@ Vanilla setups of the WFS or OGC Feature services can be raised to the semantica
 [example configuration](./examples/OGC_Features/example-config-observations.yml)
 [example configuration](./examples/OGC_Features/example-config-observations_parquet.yml)
 
-# Features API
+# OGC Features API vs OGC Web Features Service
 
 WFS specification covers not only the data payload format but also query functions and discovery of capabilities.
 
