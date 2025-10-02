@@ -1,0 +1,87 @@
+
+    chn_carbon:
+        type: collection
+        title: CHN carbon
+        description: Features coast data quality data
+        keywords:
+            - coverage
+            - ocean
+            - carbon concentration
+        extents:
+            spatial:
+                bbox: [  -73.19800491026886, 40.9816306690251, -72.95075142625052, 41.173859013488446  ]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+                #crs: http://www.opengis.net/def/crs/EPSG/0/26918
+        linked-data:
+          context:
+            - http://covjson.org/context.jsonld
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/chn_carbon
+              title: base url
+            - type: application/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/chn_carbon/coverage?bbox=-73.15,%2041,%20-73.05,%2041.05&f=json
+              title: example json query all properties by 2D bbox
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/chn_carbon/coverage?bbox=10,10,20,20
+              title: example html query all properties by 2D bbox
+        providers:
+            - type: coverage
+              name: rasterio
+              data: [data path]/CHN_carbon_grid_wgs84.tif
+              options:
+              format:
+                  name: GTiff
+                  mimetype: application/geotiff
+    chn_carbonedr:
+        type: collection
+        title: CHN carbon
+        description: Features coast data quality data
+        keywords:
+            - coverage
+            - ocean
+            - carbon concentration
+            - EDR
+        extents:
+            spatial:
+                bbox: [ -73.19800491026886, 40.9816306690251, -72.95075142625052, 41.173859013488446 ]
+                crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
+                crs: http://www.opengis.net/def/crs/EPSG/0/26918
+        linked-data:
+          context:
+            - http://covjson.org/context.jsonld
+        links:
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/chn_carbonedr
+              title: base url
+            - type: app/json
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/chn_carbonedr/cube?bbox=-73,41.0,-72.9,41.05&parameter-name=carbon_concentration&f=json
+              title: example json query carbon_concentration by 2D bbox  coordinates 
+            - type: text/html
+              rel: canonical
+              hreflang: en-US
+              href: http://localhost:5002/collections/chn_carbonedr/cube?bbox=-73,41.0,-72.9,41.05&parameter-name=carbon_concentration
+              title: example html query carbon_concentration by 2D bbox  coordinates 
+        providers:
+            - type: edr
+              name: xarray-edr
+              data: [data path]/CHN_carbon_grid_wgs84.nc
+             # optionally specify x/y/time fields, else provider will attempt
+             # to derive automagically
+              x_field: lon
+              y_field: lat
+              time_field: time
+              time_api_label: t
+              format:
+                name: netcdf
+                mimetype: application/x-netcdf
