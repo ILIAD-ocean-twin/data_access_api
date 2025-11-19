@@ -21,7 +21,7 @@ While conventions are widely known among the community, their interpretation is 
 
 ### MPA example
 
-Once there is an vanilla OGC API or similar exposing data payload like in the (MPA examples geojson)[https://github.com/ogcincubator/iliad-apis-features/tree/master/_sources/marine-protected-area-emodnet/examples], you'll have set of custom properties describing your spatial feature e.g.:
+Once there is an vanilla OGC API or similar exposing data payload like in the [MPA examples geojson](https://github.com/ogcincubator/iliad-apis-features/tree/master/_sources/marine-protected-area-emodnet/examples), you'll have set of custom properties describing your spatial feature e.g.:
 
 ```
 "properties": {
