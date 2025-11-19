@@ -10,7 +10,7 @@ Semantic on data interpretations and conceptual models.
 Marine community achived considerably high level of the semantic interoperability based on the agreed formats and conventions like the [Climate and Forecast conventions (CF)](http://cfconventions.org).
 On top of data formats like NetCDF and their access protocols like OpenDAP (technical interoperability), CF compiles:
 * [templates](https://www.ncei.noaa.gov/netcdf-templates) of interpretation of data structures with their reference to spatio-temporal domain,
-* attributes vocabularies like (standard_name)[http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#standard-name] with units, * [common transformations](http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-coordinate-subsampling) and
+* attributes vocabularies like [standard_name](http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#standard-name) with units, * [common transformations](http://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#appendix-coordinate-subsampling) and
 * contraints on data completeness.
 
 Some elements of the CF convention is based on particular representations in their native format of   NetCDF, parts were also adopted in the ISO19115 based models proposed by the SeaDataNet specifications.
@@ -40,7 +40,7 @@ Usefully, these tools directly resolves some of the references so that the value
 
 #### option 2
 Include JSON-LD context reference in the payload or http header according to the JSON-LD specification.
-this option does not touch the vanila payload so the references are not 'clickable' but data can be represented as the knowledge graph like in the end of (this examples)[https://github.com/ILIAD-ocean-twin/data_access_api/blob/main/examples/Observations_Features/Jellyfish_query_semantic.ipynb]
+this option does not touch the vanila payload so the references are not 'clickable' but data can be represented as the knowledge graph like in the end of [this examples](https://github.com/ILIAD-ocean-twin/data_access_api/blob/main/examples/Observations_Features/Jellyfish_query_semantic.ipynb)
 
 The key element here is the context that defines references between the payload and the information model like OIM.
 This context can be defined manually or you can try to include all the known references.
@@ -55,13 +55,13 @@ OIM provides several pregenerated ones which can be included like this:
 ```
 
 In the case you want to check if the context is covering all the references, you can use OGC building blocks builder:
-* push your example into the existin or new (building block definition)[https://github.com/ogcincubator/iliad-apis-features/tree/master/_sources/marine-protected-area-emodnet]
+* push your example into the existin or new [building block definition](https://github.com/ogcincubator/iliad-apis-features/tree/master/_sources/marine-protected-area-emodnet)
 * define your context references in the context.jsonld file
 * IMPORTANT extend you schema.yml with properties that need to be covered.
-* push the changes to the repo or use the (build tool on your computer)[https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md#output-testing]
+* push the changes to the repo or use the [build tool on your computer](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md#output-testing)
 * in the result you should see valid building block with aggregated and cleaned version of the context dedicated for the payload
 
-NOTE: you can use above linked repository fork or the (root one)[https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md] tha yuo can fork for your own definitions. Once they are validated you are welcome to issue Pull Request so they can be used by others for the same data.
+NOTE: you can use above linked repository fork or the [root one](https://github.com/opengeospatial/bblock-template/blob/master/USAGE.md) tha yuo can fork for your own definitions. Once they are validated you are welcome to issue Pull Request so they can be used by others for the same data.
 
 ## Proposed semantic support levels
 
